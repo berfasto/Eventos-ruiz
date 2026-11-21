@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, viewport-fit=cover"
+        />
+        <title>
+            Reservar Decoración de Eventos en La Paz, Bolivia | Eventos Ruiz
+        </title>
+        <meta
+            name="description"
+            content="Consulta disponibilidad y reserva la fecha de decoración para tu boda, 15 años, bautizo, licenciamiento o baby shower en La Paz, Bolivia con Eventos Ruiz."
+        />
+        <meta
+            name="keywords"
+            content="reservar decoración de eventos La Paz, agenda bodas La Paz Bolivia, reservar decoración 15 años, Eventos Ruiz reservas WhatsApp"
+        />
+        <meta name="robots" content="index, follow" />
+        <meta name="theme-color" content="#0d1017" />
+        <link
+            rel="canonical"
+            href="https://berfasto.github.io/Eventos-ruiz/reservas.html"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="es_BO" />
+        <meta
+            property="og:title"
+            content="Reserva tu Fecha — Eventos Ruiz · La Paz, Bolivia"
+        />
+        <meta
+            property="og:description"
+            content="Elige la fecha en nuestro calendario interactivo y confirma disponibilidad inmediata por WhatsApp."
+        />
+        <meta
+            property="og:url"
+            content="https://berfasto.github.io/Eventos-ruiz/reservas.html"
+        />
+        <meta
+            property="og:image"
+            content="https://berfasto.github.io/Eventos-ruiz/assets/IMG/6.jpeg"
+        />
+        <link rel="icon" type="image/jpeg" href="assets/IMG/Logo.jpg" />
+        <link rel="manifest" href="site.webmanifest" />
+
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "WebPage",
+                "name": "Reservas de Decoración de Eventos — Eventos Ruiz La Paz",
+                "url": "https://berfasto.github.io/Eventos-ruiz/reservas.html",
+                "potentialAction": {
+                    "@type": "ReserveAction",
+                    "target": "https://berfasto.github.io/Eventos-ruiz/reservas.html",
+                    "object": {
+                        "@type": "Service",
+                        "name": "Decoración integral de eventos en La Paz, Bolivia"
+                    }
+                }
+            }
+        </script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap"
+            rel="stylesheet"
+        />
+
+        <link rel="stylesheet" href="assets/css/tokens.css" />
+        <link rel="stylesheet" href="assets/css/base.css" />
+        <link rel="stylesheet" href="assets/css/shell.css" />
+        <link rel="stylesheet" href="assets/css/components.css" />
+        <link rel="stylesheet" href="assets/css/pages.css" />
+    </head>
+    <body data-page="reservas">
+        <header id="appHeader"></header>
+
+        <main>
+            <section class="page-hero">
+                <canvas
+                    class="hero-bokeh"
+                    id="heroBokeh"
+                    aria-hidden="true"
+                ></canvas>
+                <div class="container page-hero__inner">
+                    <div class="page-hero__copy" data-reveal="blur">
+                        <span class="kicker">
+                            <span class="kicker__dot"></span>
+                            Pestaña 04 · Agenda en línea
+                        </span>
+                        <h1 class="heading-xl">Reserva tu fecha</h1>
+                        <p class="lead">
+                            Selecciona el día de tu celebración, completa unos
+                            datos breves y envía tu solicitud directa por
+                            WhatsApp para confirmar disponibilidad al instante.
+                        </p>
+                    </div>
+                    <a class="btn btn--ghost-dark" href="cotizador.html">
+                        ¿Aún no cotizaste? Ir al cotizador
+                    </a>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <div class="booking-studio">
+                        <!-- Calendario interactivo -->
+                        <div class="card cal-box" data-reveal="up">
+                            <div class="cal-head">
+                                <button
+                                    type="button"
+                                    class="icon-circle"
+                                    id="calPrev"
+                                    aria-label="Mes anterior"
+                                >
+                                    <svg
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                    >
+                                        <path d="M15 18 9 12l6-6" />
+                                    </svg>
+                                </button>
+                                <strong class="cal-month" id="calMonth"></strong>
+                                <button
+                                    type="button"
+                                    class="icon-circle"
+                                    id="calNext"
+                                    aria-label="Mes siguiente"
+                                >
+                                    <svg
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                    >
+                                        <path d="m9 18 6-6-6-6" />
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <div class="cal-grid" id="calGrid"></div>
+
+                            <div class="cal-quick">
+                                <span class="cal-quick__label">
+                                    Atajos · Próximos sábados
+                                </span>
+                                <div
+                                    class="cal-quick__chips"
+                                    id="quickSaturdays"
+                                ></div>
+                            </div>
+                        </div>
+
+                        <!-- Formulario de reserva + Pase en vivo -->
+                        <div class="booking-right">
+                            <div class="pass-ticket" data-reveal="scale">
+                                <div class="pass-ticket__thumb">
+                                    <img
+                                        id="passImg"
+                                        src="assets/IMG/6.jpeg"
+                                        alt="Vista previa de tu evento"
+                                    />
+                                </div>
+                                <div class="pass-ticket__body">
+                                    <span class="pass-ticket__code"
+                                        >Pase de Pre-Reserva · Eventos Ruiz</span
+                                    >
+                                    <strong
+                                        class="pass-ticket__title"
+                                        id="passTitle"
+                                        >Bodas</strong
+                                    >
+                                    <span
+                                        class="pass-ticket__meta"
+                                        id="passDate"
+                                        >Elige una fecha en el calendario</span
+                                    >
+                                    <span
+                                        class="pass-ticket__meta"
+                                        id="passClient"
+                                        >Eventos Ruiz · Zona 23 de Marzo, La
+                                        Paz</span
+                                    >
+                                </div>
+                            </div>
+
+                            <div
+                                class="imported-quote"
+                                id="importedQuoteBox"
+                                hidden
+                            ></div>
+
+                            <div
+                                class="card booking-form-card"
+                                data-reveal="left"
+                            >
+                                <div class="date-banner" id="dateBanner">
+                                    <span>Fecha elegida</span>
+                                    <strong id="selectedDateText">
+                                        Ninguna seleccionada
+                                    </strong>
+                                </div>
+
+                                <div class="form-row-2">
+                                    <label class="field">
+                                        <span class="field__label">Tu nombre</span>
+                                        <input
+                                            class="input"
+                                            id="bookName"
+                                            type="text"
+                                            autocomplete="name"
+                                            placeholder="Ej. Valeria Quispe"
+                                        />
+                                    </label>
+
+                                    <label class="field">
+                                        <span class="field__label">
+                                            Tipo de evento
+                                        </span>
+                                        <select
+                                            class="select"
+                                            id="bookType"
+                                        ></select>
+                                    </label>
+                                </div>
+
+                                <div class="form-row-2">
+                                    <label class="field">
+                                        <span class="field__label">
+                                            Invitados aproximados
+                                        </span>
+                                        <input
+                                            class="input"
+                                            id="bookGuests"
+                                            type="number"
+                                            min="10"
+                                            max="600"
+                                            step="5"
+                                            placeholder="Ej. 120"
+                                        />
+                                    </label>
+
+                                    <label class="field">
+                                        <span class="field__label">
+                                            Salón o zona (opcional)
+                                        </span>
+                                        <input
+                                            class="input"
+                                            id="bookVenue"
+                                            type="text"
+                                            placeholder="Ej. Zona Sur / Sopocachi"
+                                        />
+                                    </label>
+                                </div>
+
+                                <label class="field">
+                                    <span class="field__label">
+                                        Cuéntanos tu idea o colores favoritos
+                                    </span>
+                                    <textarea
+                                        class="textarea"
+                                        id="bookNotes"
+                                        placeholder="Estilo deseado, horario aproximado, temática, flores o telas..."
+                                    ></textarea>
+                                </label>
+
+                                <div
+                                    style="
+                                        display: flex;
+                                        flex-wrap: wrap;
+                                        gap: 0.75rem;
+                                        align-items: center;
+                                    "
+                                >
+                                    <button
+                                        type="button"
+                                        class="btn btn--gold"
+                                        id="bookSubmit"
+                                    >
+                                        Confirmar disponibilidad por WhatsApp
+                                        <svg
+                                            class="arrow-move"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                        >
+                                            <path d="M5 12h14m-6 6 6-6-6-6" />
+                                        </svg>
+                                    </button>
+                                    <a class="btn" href="tel:+59167044713">
+                                        Llamar · 67044713
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer id="appFooter"></footer>
+
+        <script src="assets/js/core/data.js" defer></script>
+        <script src="assets/js/core/utils.js" defer></script>
+        <script src="assets/js/core/shell.js" defer></script>
+        <script src="assets/js/core/motion.js" defer></script>
+        <script src="assets/js/pages/reservas.js" defer></script>
+    </body>
+</html>

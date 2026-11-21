@@ -1,0 +1,17 @@
+{
+    "name": "Eventos Ruiz — Decoración de Eventos en La Paz, Bolivia",
+    "short_name": "Eventos Ruiz",
+    "description": "Decoración profesional de bodas, 15 años, bautizos, licenciamientos, baby shower y eventos corporativos en Zona 23 de Marzo, La Paz, Bolivia.",
+    "lang": "es-BO",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#0d1017",
+    "theme_color": "#0d1017",
+    "icons": [
+        {
+            "src": "assets/IMG/Logo.jpg",
+            "sizes": "640x640",
+            "type": "image/jpeg"
+        }
+    ]
+}

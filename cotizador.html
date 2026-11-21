@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, viewport-fit=cover"
+        />
+        <title>
+            Precios y Cotizador de Decoración de Eventos en Bolivia | Eventos Ruiz La Paz
+        </title>
+        <meta
+            name="description"
+            content="Calcula al instante precios y paquetes de decoración de eventos en bolivianos (Bs): bodas, 15 años, licenciamientos, bautizos y baby shower en La Paz."
+        />
+        <meta
+            name="keywords"
+            content="precios decoración de eventos Bolivia, cotizador decoración de bodas La Paz, paquetes de decoración de 15 años La Paz, alquiler decoración de salones Bolivia"
+        />
+        <meta name="robots" content="index, follow" />
+        <meta name="theme-color" content="#0d1017" />
+        <link
+            rel="canonical"
+            href="https://berfasto.github.io/Eventos-ruiz/cotizador.html"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="es_BO" />
+        <meta
+            property="og:title"
+            content="Paquetes y Cotizador en Línea — Eventos Ruiz La Paz"
+        />
+        <meta
+            property="og:description"
+            content="Compara paquetes Esencial, Premium y Gala Total y calcula un presupuesto referencial al instante en bolivianos."
+        />
+        <meta
+            property="og:url"
+            content="https://berfasto.github.io/Eventos-ruiz/cotizador.html"
+        />
+        <meta
+            property="og:image"
+            content="https://berfasto.github.io/Eventos-ruiz/assets/IMG/7.jpeg"
+        />
+        <link rel="icon" type="image/jpeg" href="assets/IMG/Logo.jpg" />
+        <link rel="manifest" href="site.webmanifest" />
+
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "OfferCatalog",
+                "name": "Paquetes de Decoración de Eventos — Eventos Ruiz",
+                "url": "https://berfasto.github.io/Eventos-ruiz/cotizador.html",
+                "itemListElement": [
+                    {
+                        "@type": "Offer",
+                        "name": "Paquete Esencial",
+                        "priceCurrency": "BOB",
+                        "price": "1100"
+                    },
+                    {
+                        "@type": "Offer",
+                        "name": "Paquete Premium",
+                        "priceCurrency": "BOB",
+                        "price": "2200"
+                    },
+                    {
+                        "@type": "Offer",
+                        "name": "Paquete Gala Total",
+                        "priceCurrency": "BOB",
+                        "price": "3900"
+                    }
+                ]
+            }
+        </script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap"
+            rel="stylesheet"
+        />
+
+        <link rel="stylesheet" href="assets/css/tokens.css" />
+        <link rel="stylesheet" href="assets/css/base.css" />
+        <link rel="stylesheet" href="assets/css/shell.css" />
+        <link rel="stylesheet" href="assets/css/components.css" />
+        <link rel="stylesheet" href="assets/css/pages.css" />
+    </head>
+    <body data-page="cotizador">
+        <header id="appHeader"></header>
+
+        <main>
+            <section class="page-hero">
+                <canvas
+                    class="hero-bokeh"
+                    id="heroBokeh"
+                    aria-hidden="true"
+                ></canvas>
+                <div class="container page-hero__inner">
+                    <div class="page-hero__copy" data-reveal="blur">
+                        <span class="kicker">
+                            <span class="kicker__dot"></span>
+                            Pestaña 03 · Presupuesto transparente
+                        </span>
+                        <h1 class="heading-xl">Paquetes y Cotizador</h1>
+                        <p class="lead">
+                            Compara nuestros tres niveles de montaje y arma tu
+                            propia cotización en vivo. Puedes enviarla por
+                            WhatsApp o transferirla directamente a tu reserva.
+                        </p>
+                    </div>
+                    <a class="btn btn--gold" href="#builderSection">
+                        Ir al cotizador en vivo
+                    </a>
+                </div>
+            </section>
+
+            <!-- 3 Niveles de Paquetes -->
+            <section class="section">
+                <div class="container">
+                    <div class="section-header" data-reveal="up">
+                        <div class="section-header__copy">
+                            <span class="kicker">Tres escalas de producción</span>
+                            <h2 class="heading-lg">Elige el nivel de tu montaje</h2>
+                        </div>
+                    </div>
+
+                    <div class="packages-row" id="packagesRow"></div>
+                </div>
+            </section>
+
+            <!-- Constructor Interactivo -->
+            <section class="section section--white" id="builderSection">
+                <div class="container">
+                    <div class="section-header" data-reveal="up">
+                        <div class="section-header__copy">
+                            <span class="kicker">Cotizador interactivo</span>
+                            <h2 class="heading-lg">
+                                Configura tu evento en tiempo real
+                            </h2>
+                            <p class="lead">
+                                Selecciona el tipo de evento, nivel, invitados y
+                                complementos opcionales. El estimado se calcula
+                                al instante.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="builder-grid">
+                        <div class="card builder-panel" data-reveal="up">
+                            <div class="field">
+                                <span class="field__label">
+                                    1. Selecciona tu tipo de evento
+                                </span>
+                                <div class="type-cards" id="typeCards"></div>
+                            </div>
+
+                            <div class="field">
+                                <span class="field__label">
+                                    2. Nivel de paquete
+                                </span>
+                                <div class="pkg-segment" id="pkgSegment"></div>
+                            </div>
+
+                            <div class="field">
+                                <div class="guest-header">
+                                    <span class="field__label">
+                                        3. Cantidad aproximada de invitados
+                                    </span>
+                                    <span class="scale-badge" id="scaleBadge">
+                                        Salón mediano
+                                    </span>
+                                </div>
+                                <div
+                                    style="
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: space-between;
+                                        gap: 1rem;
+                                    "
+                                >
+                                    <strong
+                                        class="mono"
+                                        id="guestsVal"
+                                        style="font-size: 1.2rem"
+                                        >100 invitados</strong
+                                    >
+                                    <span
+                                        class="mono"
+                                        style="
+                                            font-size: 0.75rem;
+                                            color: var(--ink-muted);
+                                        "
+                                        >10 – 500</span
+                                    >
+                                </div>
+                                <input
+                                    class="slider"
+                                    id="guestsSlider"
+                                    type="range"
+                                    min="10"
+                                    max="500"
+                                    step="5"
+                                    value="100"
+                                    aria-label="Cantidad de invitados"
+                                />
+                            </div>
+
+                            <div class="field">
+                                <span class="field__label">
+                                    4. Complementos opcionales
+                                </span>
+                                <div class="extras-list" id="extrasList"></div>
+                            </div>
+                        </div>
+
+                        <!-- Recibo Sticky con Vista Previa Real -->
+                        <aside class="receipt-card" data-reveal="left">
+                            <div class="receipt-preview">
+                                <img
+                                    id="receiptImg"
+                                    src="assets/IMG/6.jpeg"
+                                    alt="Vista previa del evento"
+                                />
+                                <span
+                                    class="receipt-preview__label"
+                                    id="receiptImgLabel"
+                                    >Bodas · Premium</span
+                                >
+                            </div>
+                            <div>
+                                <span
+                                    class="mono"
+                                    style="
+                                        font-size: 0.72rem;
+                                        letter-spacing: 0.14em;
+                                        text-transform: uppercase;
+                                        color: var(--gold-bright);
+                                    "
+                                    >Estimado referencial</span
+                                >
+                                <div
+                                    class="receipt-card__total mono"
+                                    id="receiptTotal"
+                                    style="margin-top: 0.4rem"
+                                >
+                                    Bs 0
+                                </div>
+                                <p
+                                    style="
+                                        font-size: 0.8rem;
+                                        color: var(--ink-on-dark-muted);
+                                        margin-top: 0.45rem;
+                                    "
+                                >
+                                    El monto final se afina según el salón,
+                                    horario y personalizaciones específicas.
+                                </p>
+                            </div>
+
+                            <dl class="receipt-rows" id="receiptRows"></dl>
+
+                            <div style="display: grid; gap: 0.65rem">
+                                <button
+                                    type="button"
+                                    class="btn btn--gold btn--full"
+                                    id="btnToBooking"
+                                >
+                                    Continuar a Reservar Fecha
+                                    <svg
+                                        class="arrow-move"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                    >
+                                        <path d="M5 12h14m-6 6 6-6-6-6" />
+                                    </svg>
+                                </button>
+                                <button
+                                    type="button"
+                                    class="btn btn--ghost-dark btn--full"
+                                    id="btnSendQuoteWa"
+                                >
+                                    Enviar cotización por WhatsApp
+                                </button>
+                                <button
+                                    type="button"
+                                    class="btn btn--ghost-dark btn--sm btn--full"
+                                    id="btnCopyQuote"
+                                >
+                                    Copiar resumen
+                                </button>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer id="appFooter"></footer>
+
+        <script src="assets/js/core/data.js" defer></script>
+        <script src="assets/js/core/utils.js" defer></script>
+        <script src="assets/js/core/shell.js" defer></script>
+        <script src="assets/js/core/motion.js" defer></script>
+        <script src="assets/js/pages/cotizador.js" defer></script>
+    </body>
+</html>

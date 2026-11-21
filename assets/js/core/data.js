@@ -1,0 +1,449 @@
+/**
+ * Eventos Ruiz — Fuente Única de Datos y Configuración
+ * ----------------------------------------------------
+ * Imágenes ubicadas en assets/IMG/ y ubicación en Zona 23 de Marzo, La Paz.
+ */
+(function (root) {
+    "use strict";
+
+    var ER = (root.ER = root.ER || {});
+
+    ER.DATA = {
+        brand: {
+            name: "Eventos Ruiz",
+            slogan: "Calidad y presencia",
+            city: "23 de Marzo · La Paz, Bolivia",
+            phone: "67044713",
+            phoneHref: "+59167044713",
+            whatsapp: "59167044713",
+            logo: "assets/IMG/Logo.jpg",
+        },
+
+        nav: [
+            { id: "inicio", label: "Inicio", href: "index.html", num: "01" },
+            { id: "eventos", label: "Eventos y Galería", href: "eventos.html", num: "02" },
+            { id: "cotizador", label: "Paquetes y Cotizador", href: "cotizador.html", num: "03" },
+            { id: "reservas", label: "Reservas", href: "reservas.html", num: "04" },
+            { id: "contacto", label: "Ubicación y Contacto", href: "contacto.html", num: "05" },
+        ],
+
+        location: {
+            name: "Eventos Ruiz",
+            zone: "Zona 23 de Marzo",
+            address: "Zona 23 de Marzo, La Paz, Bolivia",
+            query: "23 de Marzo, La Paz, Bolivia",
+            customLink: "",
+            hours: "Lunes a Sábado · 09:00 a 19:30",
+            coverage: "Zona 23 de Marzo, La Paz, Zona Sur, Sopocachi, Miraflores y El Alto",
+        },
+
+        /* Categorías con color dinámico propio */
+        categories: [
+            { id: "todo", label: "Todos los eventos", color: "#0f121a" },
+            { id: "bodas", label: "Bodas", color: "#d99b26" },
+            { id: "xv", label: "15 Años", color: "#7c3aed" },
+            { id: "bautizos", label: "Bautizos y Baby Shower", color: "#0284c7" },
+            { id: "licenciamientos", label: "Licenciamientos", color: "#059669" },
+            { id: "celebraciones", label: "Cumpleaños y Galas", color: "#3b5bdb" },
+        ],
+
+        /* 7 Especialidades reales del negocio */
+        eventTypes: [
+            {
+                id: "Boda",
+                label: "Bodas",
+                category: "bodas",
+                categoryLabel: "Bodas",
+                color: "#d99b26",
+                base: 2500,
+                perGuest: 22,
+                icon: "rings",
+                heroImage: "assets/IMG/6.jpeg",
+                tagline: "Telas aéreas, follaje natural e iluminación cálida inolvidable",
+                description:
+                    "Transformamos salones y jardines en escenarios memorables desde la ceremonia hasta el último baile.",
+                includes: [
+                    "Mesa principal de novios y fondo escénico",
+                    "Cortinajes aéreos con guirnaldas de luz cálida",
+                    "Centros de mesa florales y cristalería",
+                    "Montaje puntual y desmontaje completo",
+                ],
+            },
+            {
+                id: "15 años",
+                label: "15 Años",
+                category: "xv",
+                categoryLabel: "15 Años",
+                color: "#7c3aed",
+                base: 1600,
+                perGuest: 16,
+                icon: "crown",
+                heroImage: "assets/IMG/10.jpeg",
+                tagline: "Cielo de telas, pista iluminada y escenarios dignos de portada",
+                description:
+                    "Diseñamos noches mágicas con personalidad, zonas fotográficas impactantes y mesas de dulces de revista.",
+                includes: [
+                    "Entrada escénica y zona de fotos personalizada",
+                    "Mesa de torta con paneles shimmer o florales",
+                    "Iluminación ambiental y telas en techo",
+                    "Coordinación estética de pista y recepción",
+                ],
+            },
+            {
+                id: "Licenciamiento",
+                label: "Licenciamientos",
+                category: "licenciamientos",
+                categoryLabel: "Licenciamientos",
+                color: "#059669",
+                base: 1200,
+                perGuest: 13,
+                icon: "medal",
+                heroImage: "assets/IMG/8.jpeg",
+                tagline: "Presencia, orgullo y ambientación distinguida para un gran logro",
+                description:
+                    "Celebraciones de licenciamiento y graduación con escenografía sobria, arcos modernos y salones impecables.",
+                includes: [
+                    "Backdrop institucional o personalizado con nombre",
+                    "Iluminación nocturna y telas en tonos sobrios",
+                    "Mesa principal y zona de brindis",
+                    "Mantelería fina, sillas vestidas y centros de mesa",
+                ],
+            },
+            {
+                id: "Bautizo",
+                label: "Bautizos",
+                category: "bautizos",
+                categoryLabel: "Bautizos",
+                color: "#0284c7",
+                base: 650,
+                perGuest: 10,
+                icon: "leaf",
+                heroImage: "assets/IMG/5.jpg",
+                tagline: "Luz natural, frescura y detalles delicados para compartir en familia",
+                description:
+                    "Ambientes luminosos en tonos marfil, celeste o rosa suave pensados para celebraciones cálidas de día.",
+                includes: [
+                    "Mesa principal con linos y detalles botánicos",
+                    "Arreglos florales delicados en tonos claros",
+                    "Espacio de recuerdos y fotografía familiar",
+                    "Armado y retiro sin preocupaciones",
+                ],
+            },
+            {
+                id: "Baby shower",
+                label: "Baby Shower",
+                category: "bautizos",
+                categoryLabel: "Baby Shower",
+                color: "#e11d48",
+                base: 600,
+                perGuest: 9,
+                icon: "cloud",
+                heroImage: "assets/IMG/4.jpg",
+                tagline: "Ternura moderna, arcos orgánicos y mesas dulces llenas de encanto",
+                description:
+                    "Composiciones dulces y contemporáneas con cortinas retroiluminadas, globos orgánicos y papelería temática.",
+                includes: [
+                    "Cortina iluminada y letrero personalizado",
+                    "Arco orgánico de globos en paleta elegida",
+                    "Mesa dulce y pedestales decorativos",
+                    "Montaje en salón o domicilio",
+                ],
+            },
+            {
+                id: "Cumpleaños",
+                label: "Cumpleaños",
+                category: "celebraciones",
+                categoryLabel: "Cumpleaños",
+                color: "#ea580c",
+                base: 700,
+                perGuest: 11,
+                icon: "sparkle",
+                heroImage: "assets/IMG/1.jpg",
+                tagline: "Composiciones vibrantes, arcos de globos y paneles a medida",
+                description:
+                    "Desde celebraciones íntimas hasta grandes fiestas con backdrops modernos, acentos metálicos y estilo propio.",
+                includes: [
+                    "Panel temático personalizado con acrílicos o neón",
+                    "Arco de globos orgánicos y follaje",
+                    "Pedestales metálicos para torta y postres",
+                    "Paleta cromática 100% personalizada",
+                ],
+            },
+            {
+                id: "Evento corporativo",
+                label: "Corporativos y Galas",
+                category: "celebraciones",
+                categoryLabel: "Corporativos",
+                color: "#3b5bdb",
+                base: 1900,
+                perGuest: 15,
+                icon: "grid",
+                heroImage: "assets/IMG/2.jpg",
+                tagline: "Escenografía de gala, iluminación arquitectónica y precisión total",
+                description:
+                    "Lanzamientos, aniversarios, cenas de fin de año y eventos institucionales con presencia impecable.",
+                includes: [
+                    "Escenografía e iluminación profesional de salón",
+                    "Mobiliario lounge y mesas de gala",
+                    "Cortinajes arquitectónicos de alto impacto",
+                    "Logística puntual de armado y desmontaje",
+                ],
+            },
+        ],
+
+        /* Catálogo completo de las 10 fotografías reales en assets/IMG/ */
+        gallery: [
+            {
+                id: "boda-botanica",
+                title: "Boda Botánica Champagne",
+                category: "bodas",
+                categoryLabel: "Bodas",
+                eventType: "Boda",
+                src: "assets/IMG/6.jpeg",
+                desc: "Telas champagne suspendidas en el techo, follaje colgante, sillas doradas y centros florales altos.",
+            },
+            {
+                id: "salon-gala",
+                title: "Salón de Gala Nocturno",
+                category: "celebraciones",
+                categoryLabel: "Galas y Corporativos",
+                eventType: "Evento corporativo",
+                src: "assets/IMG/2.jpg",
+                desc: "Iluminación escénica violeta y cálida, araña de cristal central, cortinajes blancos y sector lounge.",
+            },
+            {
+                id: "quince-pista",
+                title: "Noche de 15 Años",
+                category: "xv",
+                categoryLabel: "15 Años",
+                eventType: "15 años",
+                src: "assets/IMG/10.jpeg",
+                desc: "Cielo de telas lavanda y blanco con puntos de luz, candelabro principal y pista blanca.",
+            },
+            {
+                id: "cielo-licenciamiento",
+                title: "Cielo Azul e Iluminación",
+                category: "licenciamientos",
+                categoryLabel: "Licenciamientos",
+                eventType: "Licenciamiento",
+                src: "assets/IMG/8.jpeg",
+                desc: "Telas azul noche entrelazadas con guirnaldas cálidas, ideal para licenciamientos y cenas de gala.",
+            },
+            {
+                id: "cumple-rosa-oro",
+                title: "Cumpleaños Orgánico",
+                category: "celebraciones",
+                categoryLabel: "Cumpleaños",
+                eventType: "Cumpleaños",
+                src: "assets/IMG/1.jpg",
+                desc: "Panel personalizado en tonos arena y fucsia con arco de globos orgánicos y pedestal dorado.",
+            },
+            {
+                id: "recepcion-candelabros",
+                title: "Recepción de Candelabros",
+                category: "bodas",
+                categoryLabel: "Bodas",
+                eventType: "Boda",
+                src: "assets/IMG/7.jpeg",
+                desc: "Tres arañas de cristal envueltas en follaje verde y telas marfil sobre mesas de recepción.",
+            },
+            {
+                id: "boda-jardin",
+                title: "Recepción de Día y Bautizos",
+                category: "bautizos",
+                categoryLabel: "Bautizos y Jardín",
+                eventType: "Bautizo",
+                src: "assets/IMG/5.jpg",
+                desc: "Carpa luminosa al aire libre, sillas doradas con lazos suaves y arreglos florales frescos.",
+            },
+            {
+                id: "quince-shimmer",
+                title: "Mesa Principal XV Shimmer",
+                category: "xv",
+                categoryLabel: "15 Años",
+                eventType: "15 años",
+                src: "assets/IMG/3.jpg",
+                desc: "Muro de lentejuelas plateado, globos cromados, pedestal acrílico y exhibición de postres.",
+            },
+            {
+                id: "baby-shower-celeste",
+                title: "Baby Shower Iluminado",
+                category: "bautizos",
+                categoryLabel: "Baby Shower",
+                eventType: "Baby shower",
+                src: "assets/IMG/4.jpg",
+                desc: "Cortina de luces cálidas, medallón central, arco de globos en celeste y blanco con mesa dulce.",
+            },
+            {
+                id: "celebracion-velas",
+                title: "Salón Íntimo con Velas",
+                category: "licenciamientos",
+                categoryLabel: "Licenciamientos y Cenas",
+                eventType: "Licenciamiento",
+                src: "assets/IMG/9.jpeg",
+                desc: "Letrero luminoso central, velas en mesas redondas, aros botánicos y ambiente sobrio y cálido.",
+            },
+        ],
+
+        /* Comparador interactivo deslizante de atmósferas (Inicio) */
+        comparisons: [
+            {
+                id: "dia-noche",
+                label: "Día Jardín vs Noche Gala",
+                leftLabel: "Recepción de Día",
+                rightLabel: "Gala Nocturna",
+                leftImg: "assets/IMG/5.jpg",
+                rightImg: "assets/IMG/2.jpg",
+                note: "Desliza la cortina para comparar un montaje luminoso de día frente a una escenografía nocturna de alto impacto.",
+            },
+            {
+                id: "botanico-cristal",
+                label: "Botánico vs Candelabros",
+                leftLabel: "Boda Botánica",
+                rightLabel: "Candelabros y Follaje",
+                leftImg: "assets/IMG/6.jpeg",
+                rightImg: "assets/IMG/7.jpeg",
+                note: "Dos maneras de transformar techos y mesas con telas champagne, follaje natural e iluminación cálida.",
+            },
+            {
+                id: "xv-glam",
+                label: "Mesa XV vs Pista Estrellada",
+                leftLabel: "Mesa Shimmer XV",
+                rightLabel: "Pista y Cielo Lavanda",
+                leftImg: "assets/IMG/3.jpg",
+                rightImg: "assets/IMG/10.jpeg",
+                note: "Desde la mesa principal de torta hasta la pista completa con cielo de telas e iluminación.",
+            },
+        ],
+
+        /* Explorador interactivo de atmósferas */
+        moods: [
+            {
+                id: "botanico",
+                title: "Jardín y Luz Cálida",
+                subtitle: "Bodas · Bautizos · Recepciones",
+                eventType: "Boda",
+                color: "#d99b26",
+                image: "assets/IMG/6.jpeg",
+                swatches: ["#d99b26", "#f5e6cc", "#2f5233"],
+                desc: "Telas ligeras en tono champagne, follaje verde en altura y calidez visual que transforma por completo cualquier salón.",
+                tags: ["Telas aéreas", "Follaje natural", "Sillas doradas", "Luz cálida"],
+            },
+            {
+                id: "noche-gala",
+                title: "Noche de Gala y Cristal",
+                subtitle: "15 Años · Corporativos · Licenciamientos",
+                eventType: "15 años",
+                color: "#7c3aed",
+                image: "assets/IMG/10.jpeg",
+                swatches: ["#7c3aed", "#1e2540", "#f8fafc"],
+                desc: "Alto impacto escénico con cielos de tela, candelabros de cristal y pistas limpias diseñadas para brillar en fotos.",
+                tags: ["Candelabros", "Pista iluminada", "Telas de color", "Iluminación pro"],
+            },
+            {
+                id: "moderno",
+                title: "Pop Orgánico y Moderno",
+                subtitle: "Cumpleaños · Baby Shower · Fiestas",
+                eventType: "Cumpleaños",
+                color: "#e11d48",
+                image: "assets/IMG/1.jpg",
+                swatches: ["#e11d48", "#f3d5b5", "#d99b26"],
+                desc: "Arcos orgánicos de globos, paneles personalizados, pedestales estilizados y mesas de dulces con frescura contemporánea.",
+                tags: ["Arco orgánico", "Panel a medida", "Mesa de dulces", "Acentos dorados"],
+            },
+            {
+                id: "sobrio",
+                title: "Sobriedad y Distinción",
+                subtitle: "Licenciamientos · Cenas · Aniversarios",
+                eventType: "Licenciamiento",
+                color: "#059669",
+                image: "assets/IMG/9.jpeg",
+                swatches: ["#059669", "#0f172a", "#e2e8f0"],
+                desc: "Composición pulcra con velas, neón cálido, aros verdes y mobiliario impecable para celebraciones con carácter.",
+                tags: ["Velas y cristal", "Letrero neón", "Aros botánicos", "Montaje sobrio"],
+            },
+        ],
+
+        /* Paquetes de servicio */
+        packages: [
+            {
+                name: "Esencial",
+                level: "Nivel 01",
+                multiplier: 1,
+                fromPrice: 1100,
+                summary: "Puesta en escena limpia y efectiva para celebraciones íntimas o en domicilio.",
+                features: [
+                    "Ambientación base con paleta elegida",
+                    "Decoración de mesa principal",
+                    "Detalles decorativos coordinados",
+                    "Montaje y retiro completo",
+                ],
+                featured: false,
+            },
+            {
+                name: "Premium",
+                level: "Nivel 02",
+                multiplier: 1.6,
+                fromPrice: 2200,
+                summary: "Nuestro nivel más solicitado: impacto visual, iluminación cálida y mesa dulce.",
+                features: [
+                    "Todo lo incluido en Esencial",
+                    "Backdrop estructurado y personalizado",
+                    "Iluminación decorativa ambiental",
+                    "Mesa de dulces estilizada",
+                    "Asesoría estética previa al evento",
+                ],
+                featured: true,
+            },
+            {
+                name: "Gala Total",
+                level: "Nivel 03",
+                multiplier: 2.4,
+                fromPrice: 3900,
+                summary: "Transformación integral del salón con telas aéreas, diseño floral y dirección completa.",
+                features: [
+                    "Todo lo incluido en Premium",
+                    "Diseño floral y botánico de gran formato",
+                    "Telas en techo, arco y entrada escénica",
+                    "Iluminación arquitectónica completa",
+                    "Supervisión estética el día del evento",
+                ],
+                featured: false,
+            },
+        ],
+
+        /* Extras seleccionables */
+        extras: [
+            { name: "Arco orgánico de globos", price: 350 },
+            { name: "Mesa de dulces", price: 450 },
+            { name: "Iluminación escénica", price: 600 },
+            { name: "Backdrop floral / shimmer", price: 800 },
+            { name: "Mantelería y sillas", price: 500 },
+            { name: "Letras o letrero luminoso", price: 400 },
+        ],
+
+        /* Preguntas frecuentes */
+        faqs: [
+            {
+                q: "¿Dónde están ubicados y qué zonas cubren?",
+                a: "Nos encontramos en la Zona 23 de Marzo, La Paz, Bolivia, y realizamos traslados y montajes completos en toda la ciudad de La Paz, Zona Sur y El Alto.",
+            },
+            {
+                q: "¿Qué tipos de eventos decoran en Eventos Ruiz?",
+                a: "Decoramos bodas, 15 años, bautizos, licenciamientos, baby showers, cumpleaños y eventos corporativos o galas totalmente personalizados.",
+            },
+            {
+                q: "¿Con cuánta anticipación debo reservar mi fecha?",
+                a: "Lo ideal es reservar entre 3 y 8 semanas antes para asegurar disponibilidad en fines de semana. Si tu fecha está muy cerca, escríbenos por WhatsApp y verificamos de inmediato.",
+            },
+            {
+                q: "¿El servicio incluye transporte, montaje y retiro?",
+                a: "Sí. Nosotros nos encargamos de llevar todo el mobiliario y decoración, dejar el salón listo antes de la hora acordada y recoger todo al finalizar el evento.",
+            },
+            {
+                q: "¿Puedo personalizar colores, flores y temática?",
+                a: "Claro que sí. Ningún montaje es genérico: ajustamos colores, telas, iluminación y detalles a tu estilo, presupuesto y dimensiones del salón.",
+            },
+        ],
+    };
+})(window);

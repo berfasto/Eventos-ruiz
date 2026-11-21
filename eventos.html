@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, viewport-fit=cover"
+        />
+        <title>
+            Galería de Decoración de Bodas, 15 Años y Licenciamientos en La Paz | Eventos Ruiz
+        </title>
+        <meta
+            name="description"
+            content="Fotos reales de decoración de bodas, 15 años, bautizos, licenciamientos, baby shower y galas en La Paz, Bolivia. Guarda tus montajes favoritos y reserva."
+        />
+        <meta
+            name="keywords"
+            content="fotos decoración de bodas La Paz, decoración de 15 años Bolivia, decoración de licenciamientos La Paz, arcos de globos y telas La Paz, galería Eventos Ruiz"
+        />
+        <meta name="robots" content="index, follow" />
+        <meta name="theme-color" content="#0d1017" />
+        <link
+            rel="canonical"
+            href="https://berfasto.github.io/Eventos-ruiz/eventos.html"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="es_BO" />
+        <meta
+            property="og:title"
+            content="Eventos y Galería — Decoración de Eventos en La Paz | Eventos Ruiz"
+        />
+        <meta
+            property="og:description"
+            content="Explora nuestras 7 especialidades y fotografías reales de montajes en La Paz, Bolivia."
+        />
+        <meta
+            property="og:url"
+            content="https://berfasto.github.io/Eventos-ruiz/eventos.html"
+        />
+        <meta
+            property="og:image"
+            content="https://berfasto.github.io/Eventos-ruiz/assets/IMG/10.jpeg"
+        />
+        <link rel="icon" type="image/jpeg" href="assets/IMG/Logo.jpg" />
+        <link rel="manifest" href="site.webmanifest" />
+
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "CollectionPage",
+                "name": "Eventos y Galería de Montajes — Eventos Ruiz",
+                "url": "https://berfasto.github.io/Eventos-ruiz/eventos.html",
+                "about": {
+                    "@type": "Service",
+                    "serviceType": "Decoración integral de eventos en La Paz, Bolivia",
+                    "provider": {
+                        "@type": "LocalBusiness",
+                        "name": "Eventos Ruiz",
+                        "telephone": "+59167044713"
+                    },
+                    "areaServed": "La Paz, Bolivia"
+                }
+            }
+        </script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap"
+            rel="stylesheet"
+        />
+
+        <link rel="stylesheet" href="assets/css/tokens.css" />
+        <link rel="stylesheet" href="assets/css/base.css" />
+        <link rel="stylesheet" href="assets/css/shell.css" />
+        <link rel="stylesheet" href="assets/css/components.css" />
+        <link rel="stylesheet" href="assets/css/pages.css" />
+    </head>
+    <body data-page="eventos">
+        <header id="appHeader"></header>
+
+        <main>
+            <section class="page-hero">
+                <canvas
+                    class="hero-bokeh"
+                    id="heroBokeh"
+                    aria-hidden="true"
+                ></canvas>
+                <div class="container page-hero__inner">
+                    <div class="page-hero__copy" data-reveal="blur">
+                        <span class="kicker">
+                            <span class="kicker__dot"></span>
+                            Pestaña 02 · Especialidades y Portafolio
+                        </span>
+                        <h1 class="heading-xl">Eventos y Galería</h1>
+                        <p class="lead">
+                            Filtra por tipo de celebración, marca tus montajes
+                            favoritos con el corazón y envíanos tu selección
+                            completa en un clic.
+                        </p>
+                    </div>
+                    <div style="display: flex; gap: 0.65rem; flex-wrap: wrap">
+                        <a
+                            class="btn btn--gold"
+                            data-magnetic
+                            href="reservas.html"
+                        >
+                            Reservar fecha
+                        </a>
+                        <a class="btn btn--ghost-dark" href="cotizador.html">
+                            Cotizar evento
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Filtro unificado + Especialidades -->
+            <section class="section">
+                <div class="container">
+                    <div class="gallery-toolbar" data-reveal="up">
+                        <div
+                            class="pills"
+                            id="eventsFilterBar"
+                            role="group"
+                            aria-label="Filtrar por categoría de evento"
+                        ></div>
+                        <div
+                            style="
+                                display: flex;
+                                align-items: center;
+                                gap: 0.75rem;
+                            "
+                        >
+                            <span class="gallery-count" id="galleryCount"></span>
+                            <button
+                                type="button"
+                                class="btn btn--sm"
+                                id="viewToggleBtn"
+                            >
+                                Vista: Editorial
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="section-header" style="margin-bottom: 1.5rem">
+                        <div class="section-header__copy">
+                            <h2 class="heading-md">Especialidades incluidas</h2>
+                            <p class="lead">
+                                Toca cualquier tarjeta para desplegar los
+                                detalles del montaje o pasa directo a cotizar y
+                                reservar.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="services-deck" id="servicesDeck"></div>
+                </div>
+            </section>
+
+            <!-- Galería visual de los 10 montajes -->
+            <section class="section section--white">
+                <div class="container">
+                    <div class="section-header" data-reveal="up">
+                        <div class="section-header__copy">
+                            <span class="kicker">Muestra real · Guarda tus favoritos</span>
+                            <h2 class="heading-lg">Galería de montajes</h2>
+                            <p class="lead">
+                                Haz clic sobre cualquier imagen para verla en
+                                pantalla completa o toca el corazón para armar
+                                tu tablero de inspiración.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-grid is-all" id="galleryGrid"></div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Bandeja flotante de Favoritos -->
+        <div class="fav-tray" id="favTray" aria-live="polite">
+            <span class="mono" id="favCountText" style="font-size: 0.78rem"></span>
+            <button
+                type="button"
+                class="btn btn--gold btn--sm"
+                id="favSendWa"
+            >
+                Enviar favoritos por WhatsApp
+            </button>
+            <a class="btn btn--ghost-dark btn--sm" href="reservas.html">
+                Reservar
+            </a>
+        </div>
+
+        <!-- Lightbox Fullscreen -->
+        <div
+            class="lightbox"
+            id="erLightbox"
+            hidden
+            role="dialog"
+            aria-modal="true"
+            aria-label="Visor de montaje"
+        >
+            <button
+                type="button"
+                class="icon-circle lightbox__ctrl lightbox__close"
+                id="lbClose"
+                aria-label="Cerrar"
+            >
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                >
+                    <path d="M18 6 6 18M6 6l12 12" />
+                </svg>
+            </button>
+
+            <button
+                type="button"
+                class="icon-circle lightbox__ctrl lightbox__prev"
+                id="lbPrev"
+                aria-label="Anterior"
+            >
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                >
+                    <path d="M15 18 9 12l6-6" />
+                </svg>
+            </button>
+
+            <div class="lightbox__box">
+                <div class="lightbox__media">
+                    <img class="lightbox__img" id="lbImg" src="" alt="" />
+                </div>
+                <div class="lightbox__bar">
+                    <div>
+                        <div
+                            class="mono"
+                            id="lbCounter"
+                            style="
+                                font-size: 0.75rem;
+                                color: var(--gold-bright);
+                            "
+                        ></div>
+                        <h3 class="lightbox__title" id="lbTitle"></h3>
+                        <p class="lightbox__desc" id="lbDesc"></p>
+                    </div>
+                    <div class="lightbox__actions">
+                        <a
+                            class="btn btn--gold btn--sm"
+                            id="lbBook"
+                            href="reservas.html"
+                        >
+                            Reservar este estilo
+                        </a>
+                        <a
+                            class="btn btn--ghost-dark btn--sm"
+                            id="lbQuote"
+                            href="cotizador.html"
+                        >
+                            Cotizar similar
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <button
+                type="button"
+                class="icon-circle lightbox__ctrl lightbox__next"
+                id="lbNext"
+                aria-label="Siguiente"
+            >
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                >
+                    <path d="m9 18 6-6-6-6" />
+                </svg>
+            </button>
+        </div>
+
+        <footer id="appFooter"></footer>
+
+        <script src="assets/js/core/data.js" defer></script>
+        <script src="assets/js/core/utils.js" defer></script>
+        <script src="assets/js/core/shell.js" defer></script>
+        <script src="assets/js/core/motion.js" defer></script>
+        <script src="assets/js/pages/eventos.js" defer></script>
+    </body>
+</html>
