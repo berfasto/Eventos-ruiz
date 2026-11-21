@@ -10,7 +10,7 @@
 
     function qsa(sel, scope) {
         return Array.prototype.slice.call(
-            (scope || document).querySelectorAll(sel)
+            (scope || document).querySelectorAll(sel),
         );
     }
 
@@ -23,7 +23,7 @@
         window.open(
             "https://wa.me/" + phone + "?text=" + encodeURIComponent(text),
             "_blank",
-            "noopener,noreferrer"
+            "noopener,noreferrer",
         );
     }
 
@@ -111,7 +111,7 @@
                         node.remove();
                     };
                 })(dot),
-                720
+                720,
             );
         }
     }
@@ -127,9 +127,7 @@
     function saveDraft(key, data) {
         try {
             sessionStorage.setItem("er_" + key, JSON.stringify(data));
-        } catch (err) {
-
-        }
+        } catch (err) {}
     }
 
     function loadDraft(key) {
@@ -144,9 +142,7 @@
     function clearDraft(key) {
         try {
             sessionStorage.removeItem("er_" + key);
-        } catch (err) {
-
-        }
+        } catch (err) {}
     }
 
     function getFavorites() {
@@ -171,25 +167,12 @@
         }
         try {
             localStorage.setItem("er_favs", JSON.stringify(list));
-        } catch (err) {
-
-        }
+        } catch (err) {}
         return { added: added, list: list };
     }
 
     function goPage(url) {
-        var curtain = qs("#pageCurtain");
-        if (
-            curtain &&
-            !window.matchMedia("(prefers-reduced-motion: reduce)").matches
-        ) {
-            curtain.classList.add("is-active");
-            setTimeout(function () {
-                window.location.href = url;
-            }, 240);
-        } else {
-            window.location.href = url;
-        }
+        window.location.href = url;
     }
 
     var ICONS = {
@@ -198,7 +181,8 @@
         medal: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="14" r="6"/><path d="M8.5 9.2 6 3h4l2 4 2-4h4l-2.5 6.2"/><path d="m10.5 14 1 1 2.2-2.2"/></svg>',
         leaf: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M19 4C11 4 5 9.5 5 18c0 .7.1 1.4.2 2C13.7 20 19 14 19 4Z"/><path d="M5 19l9-9"/></svg>',
         cloud: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6.5 18h11a4 4 0 0 0 .8-7.9A5.5 5.5 0 0 0 7.6 8.5 3.8 3.8 0 0 0 6.5 18Z"/></svg>',
-        sparkle: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l2.2 6.8L21 12l-6.8 2.2L12 21l-2.2-6.8L3 12l6.8-2.2L12 3Z"/></svg>',
+        sparkle:
+            '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l2.2 6.8L21 12l-6.8 2.2L12 21l-2.2-6.8L3 12l6.8-2.2L12 3Z"/></svg>',
         grid: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></svg>',
         check: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>',
         arrow: '<svg class="arrow-move" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>',

@@ -43,9 +43,9 @@ Eventos ruiz/
 - **Un solo lugar para actualizar datos**: edita `assets/js/core/data.js` para cambiar teléfono, precios, paquetes, agregar fotos a `IMG/` o actualizar preguntas frecuentes; las 5 páginas se actualizan solas.
 - **Un solo lugar para la navegación y el pie de página**: `assets/js/core/shell.js` inyecta la barra superior, el menú móvil y el footer en todas las páginas automáticamente.
 - **Conexión inteligente entre pestañas**:
-  - La barra rápida en `index.html` lleva el evento, fecha e invitados directo a `reservas.html`.
-  - Desde cualquier foto o especialidad en `eventos.html` se puede saltar directo a cotizar o reservar ese tipo de evento.
-  - La cotización armada en `cotizador.html` se guarda automáticamente al pulsar **"Continuar a Reservar Fecha"** y aparece vinculada en `reservas.html`.
+    - La barra rápida en `index.html` lleva el evento, fecha e invitados directo a `reservas.html`.
+    - Desde cualquier foto o especialidad en `eventos.html` se puede saltar directo a cotizar o reservar ese tipo de evento.
+    - La cotización armada en `cotizador.html` se guarda automáticamente al pulsar **"Continuar a Reservar Fecha"** y aparece vinculada en `reservas.html`.
 
 ## Sitio publicado (GitHub Pages)
 

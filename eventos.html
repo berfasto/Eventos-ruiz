@@ -7,7 +7,8 @@
             content="width=device-width, initial-scale=1, viewport-fit=cover"
         />
         <title>
-            Galería de Decoración de Bodas, 15 Años y Licenciamientos en La Paz | Eventos Ruiz
+            Galería de Decoración de Bodas, 15 Años y Licenciamientos en La Paz
+            | Eventos Ruiz
         </title>
         <meta
             name="description"
@@ -66,15 +67,15 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap"
+            href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
             rel="stylesheet"
         />
 
-        <link rel="stylesheet" href="assets/css/tokens.css" />
-        <link rel="stylesheet" href="assets/css/base.css" />
-        <link rel="stylesheet" href="assets/css/shell.css" />
-        <link rel="stylesheet" href="assets/css/components.css" />
-        <link rel="stylesheet" href="assets/css/pages.css" />
+        <link rel="stylesheet" href="assets/css/tokens.css?v=3" />
+        <link rel="stylesheet" href="assets/css/base.css?v=3" />
+        <link rel="stylesheet" href="assets/css/shell.css?v=3" />
+        <link rel="stylesheet" href="assets/css/components.css?v=3" />
+        <link rel="stylesheet" href="assets/css/pages.css?v=3" />
     </head>
     <body data-page="eventos">
         <header id="appHeader"></header>
@@ -88,15 +89,12 @@
                 ></canvas>
                 <div class="container page-hero__inner">
                     <div class="page-hero__copy" data-reveal="blur">
-                        <span class="kicker">
-                            <span class="kicker__dot"></span>
-                            Pestaña 02 · Especialidades y Portafolio
-                        </span>
-                        <h1 class="heading-xl">Eventos y Galería</h1>
+                        <h1 class="heading-xl">
+                            Eventos y <span class="text-gradient">Galería</span>
+                        </h1>
                         <p class="lead">
-                            Filtra por tipo de celebración, marca tus montajes
-                            favoritos con el corazón y envíanos tu selección
-                            completa en un clic.
+                            Filtra por evento, mira las fotos y guarda tus
+                            favoritas.
                         </p>
                     </div>
                     <div style="display: flex; gap: 0.65rem; flex-wrap: wrap">
@@ -130,7 +128,10 @@
                                 gap: 0.75rem;
                             "
                         >
-                            <span class="gallery-count" id="galleryCount"></span>
+                            <span
+                                class="gallery-count"
+                                id="galleryCount"
+                            ></span>
                             <button
                                 type="button"
                                 class="btn btn--sm"
@@ -141,18 +142,7 @@
                         </div>
                     </div>
 
-                    <div class="section-header" style="margin-bottom: 1.5rem">
-                        <div class="section-header__copy">
-                            <h2 class="heading-md">Especialidades incluidas</h2>
-                            <p class="lead">
-                                Toca cualquier tarjeta para desplegar los
-                                detalles del montaje o pasa directo a cotizar y
-                                reservar.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="services-deck" id="servicesDeck"></div>
+                    <div class="gallery-grid is-all" id="galleryGrid"></div>
                 </div>
             </section>
 
@@ -160,28 +150,29 @@
                 <div class="container">
                     <div class="section-header" data-reveal="up">
                         <div class="section-header__copy">
-                            <span class="kicker">Muestra real · Guarda tus favoritos</span>
-                            <h2 class="heading-lg">Galería de montajes</h2>
+                            <h2 class="heading-lg">
+                                Qué incluye
+                                <span class="text-gradient">cada evento</span>
+                            </h2>
                             <p class="lead">
-                                Haz clic sobre cualquier imagen para verla en
-                                pantalla completa o toca el corazón para armar
-                                tu tablero de inspiración.
+                                Toca una tarjeta para ver el detalle o pasar
+                                directo a reservar.
                             </p>
                         </div>
                     </div>
 
-                    <div class="gallery-grid is-all" id="galleryGrid"></div>
+                    <div class="spec-bento-grid" id="servicesDeck"></div>
                 </div>
             </section>
         </main>
 
         <div class="fav-tray" id="favTray" aria-live="polite">
-            <span class="mono" id="favCountText" style="font-size: 0.78rem"></span>
-            <button
-                type="button"
-                class="btn btn--gold btn--sm"
-                id="favSendWa"
-            >
+            <span
+                class="mono"
+                id="favCountText"
+                style="font-size: 0.78rem"
+            ></span>
+            <button type="button" class="btn btn--gold btn--sm" id="favSendWa">
                 Enviar favoritos por WhatsApp
             </button>
             <a class="btn btn--ghost-dark btn--sm" href="reservas.html">

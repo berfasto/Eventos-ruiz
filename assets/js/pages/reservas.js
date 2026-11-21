@@ -60,7 +60,9 @@
 
         typeSelect.innerHTML = ER.DATA.eventTypes
             .map(function (ev) {
-                return '<option value="' + ev.id + '">' + ev.label + "</option>";
+                return (
+                    '<option value="' + ev.id + '">' + ev.label + "</option>"
+                );
             })
             .join("");
 
@@ -76,12 +78,12 @@
             var parsed = new Date(
                 Number(parts[0]),
                 Number(parts[1]) - 1,
-                Number(parts[2])
+                Number(parts[2]),
             );
             var today0 = new Date(
                 now.getFullYear(),
                 now.getMonth(),
-                now.getDate()
+                now.getDate(),
             );
             if (parsed >= today0) {
                 selectedDate = parsed;
@@ -184,7 +186,7 @@
             var today = new Date(
                 now.getFullYear(),
                 now.getMonth(),
-                now.getDate()
+                now.getDate(),
             );
 
             calMonth.textContent = first.toLocaleDateString("es-BO", {
@@ -248,7 +250,11 @@
         calGrid.addEventListener("click", function (e) {
             var btn = e.target.closest(".cal-day");
             if (!btn || btn.disabled) return;
-            selectedDate = new Date(viewYear, viewMonth, Number(btn.dataset.day));
+            selectedDate = new Date(
+                viewYear,
+                viewMonth,
+                Number(btn.dataset.day),
+            );
             dateBanner.classList.remove("is-error");
             dateText.textContent = formatLong(selectedDate);
             renderCalendar();

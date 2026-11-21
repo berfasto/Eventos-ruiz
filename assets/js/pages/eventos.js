@@ -50,65 +50,31 @@
             favTray.classList.toggle("is-visible", favs.length > 0);
             favCountEl.textContent =
                 favs.length +
-                (favs.length === 1
-                    ? " montaje favorito guardado"
-                    : " montajes favoritos guardados");
+                (favs.length === 1 ? " foto guardada" : " fotos guardadas");
+        }
+
+        function applyGridLayoutClass(count) {
+            galGrid.classList.remove(
+                "is-all",
+                "is-uniform",
+                "is-count-1",
+                "is-count-2",
+                "is-count-3",
+                "is-count-4",
+            );
+            if (uniformMode) {
+                galGrid.classList.add("is-uniform");
+            } else if (validCat === "todo") {
+                galGrid.classList.add("is-all");
+            } else if (count >= 1 && count <= 4) {
+                galGrid.classList.add("is-count-" + count);
+            }
         }
 
         function renderAll(cat) {
             var favs = ER.utils.getFavorites();
 
-            var specs = ER.DATA.eventTypes.filter(function (ev) {
-                return cat === "todo" || ev.category === cat;
-            });
-
-            specDeck.innerHTML = specs
-                .map(function (ev, i) {
-                    var icon =
-                        ER.utils.ICONS[ev.icon] || ER.utils.ICONS.sparkle;
-                    return (
-                        '<article class="card event-spec" data-spotlight data-tilt="5" style="--spec-color:' +
-                        ev.color +
-                        "; --delay:" +
-                        i * 55 +
-                        'ms" data-reveal="up" tabindex="0" role="button" aria-expanded="false">' +
-                        '<div class="event-spec__top">' +
-                        '<span class="event-spec__icon">' +
-                        icon +
-                        "</span>" +
-                        '<span class="event-spec__tag">' +
-                        ev.categoryLabel +
-                        "</span>" +
-                        "</div>" +
-                        "<div><h3>" +
-                        ev.label +
-                        "</h3><p>" +
-                        ev.description +
-                        "</p></div>" +
-                        '<div class="event-spec__body"><div class="event-spec__inner">' +
-                        '<ul class="event-spec__list">' +
-                        ev.includes
-                            .map(function (inc) {
-                                return "<li>" + inc + "</li>";
-                            })
-                            .join("") +
-                        "</ul></div></div>" +
-                        '<div class="event-spec__foot">' +
-                        '<span class="event-spec__toggle">Ver qué incluye +</span>' +
-                        '<div style="display:flex;gap:0.45rem">' +
-                        '<a class="btn btn--sm" href="cotizador.html?evento=' +
-                        encodeURIComponent(ev.id) +
-                        '">Cotizar</a>' +
-                        '<a class="btn btn--dark btn--sm" href="reservas.html?evento=' +
-                        encodeURIComponent(ev.id) +
-                        '">Reservar</a>' +
-                        "</div>" +
-                        "</div>" +
-                        "</article>"
-                    );
-                })
-                .join("");
-
+            /* 1. Galería filtrada estilo Bento/Editorial en primer plano */
             visiblePhotos = ER.DATA.gallery.filter(function (g) {
                 return cat === "todo" || g.category === cat;
             });
@@ -116,13 +82,10 @@
             if (galCount) {
                 galCount.textContent =
                     visiblePhotos.length +
-                    (visiblePhotos.length === 1
-                        ? " montaje mostrado"
-                        : " montajes mostrados");
+                    (visiblePhotos.length === 1 ? " foto" : " fotos");
             }
 
-            galGrid.classList.toggle("is-all", cat === "todo" && !uniformMode);
-            galGrid.classList.toggle("is-uniform", uniformMode);
+            applyGridLayoutClass(visiblePhotos.length);
 
             galGrid.innerHTML = visiblePhotos
                 .map(function (item, idx) {
@@ -140,7 +103,7 @@
                         "</button>" +
                         '<button type="button" class="gal-item" data-gal-idx="' +
                         idx +
-                        '" data-cursor="AMPLIAR">' +
+                        '" data-tilt="5" data-cursor="AMPLIAR">' +
                         '<img src="' +
                         item.src +
                         '" alt="' +
@@ -151,6 +114,8 @@
                         item.categoryLabel +
                         '</span><span class="gal-item__title">' +
                         item.title +
+                        '</span><span class="gal-item__desc">' +
+                        item.desc +
                         "</span></div>" +
                         "</div>" +
                         "</button>" +
@@ -159,8 +124,63 @@
                 })
                 .join("");
 
-            ER.motion.observeNew(specDeck);
+            /* 2. Tarjetas visuales con foto real para cada evento filtrado */
+            var specs = ER.DATA.eventTypes.filter(function (ev) {
+                return cat === "todo" || ev.category === cat;
+            });
+
+            specDeck.classList.toggle("is-few", specs.length === 2);
+            specDeck.classList.toggle("is-single", specs.length === 1);
+
+            specDeck.innerHTML = specs
+                .map(function (ev, i) {
+                    return (
+                        '<article class="spec-photo-card" data-tilt="5" style="--delay:' +
+                        i * 60 +
+                        'ms" data-reveal="up" tabindex="0" role="button" aria-expanded="false">' +
+                        '<img class="spec-photo-card__img" src="' +
+                        ev.heroImage +
+                        '" alt="' +
+                        ev.label +
+                        '" loading="lazy" />' +
+                        '<div class="spec-photo-card__top">' +
+                        '<span class="spec-photo-card__pill">' +
+                        ev.label +
+                        "</span>" +
+                        "</div>" +
+                        "<div>" +
+                        "<h3>" +
+                        ev.label +
+                        "</h3><p>" +
+                        ev.description +
+                        "</p>" +
+                        '<div class="event-spec__body"><div class="event-spec__inner">' +
+                        '<ul class="event-spec__list">' +
+                        ev.includes
+                            .map(function (inc) {
+                                return "<li>" + inc + "</li>";
+                            })
+                            .join("") +
+                        "</ul></div></div>" +
+                        '<div class="event-spec__foot">' +
+                        '<span class="event-spec__toggle">Ver qué incluye +</span>' +
+                        '<div style="display:flex;gap:0.45rem">' +
+                        '<a class="btn btn--ghost-dark btn--sm" href="cotizador.html?evento=' +
+                        encodeURIComponent(ev.id) +
+                        '">Cotizar</a>' +
+                        '<a class="btn btn--gold btn--sm" href="reservas.html?evento=' +
+                        encodeURIComponent(ev.id) +
+                        '">Reservar</a>' +
+                        "</div>" +
+                        "</div>" +
+                        "</div>" +
+                        "</article>"
+                    );
+                })
+                .join("");
+
             ER.motion.observeNew(galGrid);
+            ER.motion.observeNew(specDeck);
         }
 
         filterBar.addEventListener("click", function (e) {
@@ -179,11 +199,7 @@
                 viewToggle.textContent = uniformMode
                     ? "Vista: Cuadrícula"
                     : "Vista: Editorial";
-                galGrid.classList.toggle(
-                    "is-all",
-                    validCat === "todo" && !uniformMode
-                );
-                galGrid.classList.toggle("is-uniform", uniformMode);
+                applyGridLayoutClass(visiblePhotos.length);
             });
         }
 
@@ -191,18 +207,18 @@
             var open = card.classList.toggle("is-open");
             card.setAttribute("aria-expanded", String(open));
             var t = ER.utils.qs(".event-spec__toggle", card);
-            if (t) t.textContent = open ? "Ocultar detalles –" : "Ver qué incluye +";
+            if (t) t.textContent = open ? "Ocultar –" : "Ver qué incluye +";
         }
 
         specDeck.addEventListener("click", function (e) {
             if (e.target.closest("a")) return;
-            var card = e.target.closest(".event-spec");
+            var card = e.target.closest(".spec-photo-card");
             if (card) toggleSpec(card);
         });
 
         specDeck.addEventListener("keydown", function (e) {
             if (e.key !== "Enter" && e.key !== " ") return;
-            var card = e.target.closest(".event-spec");
+            var card = e.target.closest(".spec-photo-card");
             if (card && e.target === card) {
                 e.preventDefault();
                 toggleSpec(card);
@@ -267,9 +283,9 @@
                     var r = favBtn.getBoundingClientRect();
                     ER.utils.burstSparkles(
                         r.left + r.width / 2,
-                        r.top + r.height / 2
+                        r.top + r.height / 2,
                     );
-                    ER.utils.toast("Guardado en tus montajes favoritos");
+                    ER.utils.toast("Guardado en tus favoritos");
                 } else {
                     ER.utils.toast("Quitado de favoritos");
                 }
@@ -291,9 +307,9 @@
                         return g.title;
                     });
                 ER.utils.openWhatsApp(
-                    "Hola Eventos Ruiz, me encantaron estos montajes de su galería: " +
+                    "Hola Eventos Ruiz, me gustaron estas fotos de su página: " +
                         names.join(", ") +
-                        ". ¿Podrían asesorarme para mi evento?"
+                        ". ¿Podrían asesorarme para mi evento?",
                 );
             });
         }
@@ -322,7 +338,7 @@
             function (e) {
                 startX = e.changedTouches[0].clientX;
             },
-            { passive: true }
+            { passive: true },
         );
         lb.addEventListener(
             "touchend",
@@ -330,7 +346,7 @@
                 var dx = e.changedTouches[0].clientX - startX;
                 if (Math.abs(dx) > 45) showPhoto(lbIndex + (dx < 0 ? 1 : -1));
             },
-            { passive: true }
+            { passive: true },
         );
 
         renderAll(validCat);

@@ -1,9 +1,9 @@
 :root {
     color-scheme: light;
 
-    --font-display: "Bricolage Grotesque", system-ui, -apple-system, sans-serif;
+    --font-display: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
     --font-sans: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
-    --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+    --font-mono: "DM Sans", system-ui, -apple-system, sans-serif;
 
     --text-xs: 0.75rem;
     --text-sm: 0.875rem;
@@ -29,7 +29,17 @@
 
     --gold: #d99b26;
     --gold-bright: #f2bc4c;
-    --gold-soft: rgba(217, 155, 38, 0.13);
+    --gold-soft: rgba(217, 155, 38, 0.14);
+    --purple: #8b5cf6;
+    --purple-bright: #c084fc;
+    --purple-soft: rgba(139, 92, 246, 0.14);
+    --grad-accent: linear-gradient(
+        95deg,
+        #f3c456 0%,
+        #e2a442 36%,
+        #c685a8 68%,
+        #a474d6 100%
+    );
     --brand-accent: #d99b26;
     --brand-accent-soft: rgba(217, 155, 38, 0.14);
 

@@ -24,11 +24,15 @@
                 entries.forEach(function (entry) {
                     if (entry.isIntersecting) {
                         entry.target.classList.add("is-in");
-                        revealObserver.unobserve(entry.target);
+                    } else if (
+                        entry.boundingClientRect.top > window.innerHeight ||
+                        entry.boundingClientRect.bottom < 0
+                    ) {
+                        entry.target.classList.remove("is-in");
                     }
                 });
             },
-            { threshold: 0.08, rootMargin: "0px 0px -30px 0px" }
+            { threshold: 0.06, rootMargin: "40px 0px -24px 0px" },
         );
 
         nodes.forEach(function (n) {
@@ -77,7 +81,7 @@
                     }
                 });
             },
-            { threshold: 0.3 }
+            { threshold: 0.3 },
         );
 
         counters.forEach(function (c) {
@@ -114,7 +118,7 @@
                         "deg) translateY(-4px)";
                 }
             },
-            { passive: true }
+            { passive: true },
         );
 
         document.addEventListener(
@@ -125,7 +129,7 @@
                     tilt.style.transform = "";
                 }
             },
-            { passive: true }
+            { passive: true },
         );
     }
 
@@ -139,7 +143,11 @@
                 var dx = (e.clientX - (r.left + r.width / 2)) * 0.22;
                 var dy = (e.clientY - (r.top + r.height / 2)) * 0.28;
                 el.style.transform =
-                    "translate(" + dx.toFixed(1) + "px, " + dy.toFixed(1) + "px)";
+                    "translate(" +
+                    dx.toFixed(1) +
+                    "px, " +
+                    dy.toFixed(1) +
+                    "px)";
             });
             el.addEventListener("pointerleave", function () {
                 el.style.transform = "";
@@ -179,7 +187,7 @@
                     lens.classList.remove("is-expanded");
                 }
             },
-            { passive: true }
+            { passive: true },
         );
 
         document.addEventListener("pointerleave", function () {
@@ -191,7 +199,11 @@
             cx += (mx - cx) * 0.18;
             cy += (my - cy) * 0.18;
             lens.style.transform =
-                "translate3d(" + cx.toFixed(1) + "px, " + cy.toFixed(1) + "px, 0)";
+                "translate3d(" +
+                cx.toFixed(1) +
+                "px, " +
+                cy.toFixed(1) +
+                "px, 0)";
             requestAnimationFrame(loop);
         }
         requestAnimationFrame(loop);
@@ -210,6 +222,7 @@
         var palette = [
             "242, 188, 76",
             "217, 155, 38",
+            "168, 85, 247",
             "124, 58, 237",
             "255, 255, 255",
         ];
@@ -251,7 +264,7 @@
                 mouse.x = (e.clientX - r.left) / Math.max(1, r.width);
                 mouse.y = (e.clientY - r.top) / Math.max(1, r.height);
             },
-            { passive: true }
+            { passive: true },
         );
 
         function draw(t) {
@@ -273,11 +286,11 @@
                         0,
                         p.x,
                         p.y,
-                        p.r * 3.4
+                        p.r * 3.4,
                     );
                     grad.addColorStop(
                         0,
-                        "rgba(" + p.color + ", " + twinkle.toFixed(2) + ")"
+                        "rgba(" + p.color + ", " + twinkle.toFixed(2) + ")",
                     );
                     grad.addColorStop(1, "rgba(" + p.color + ", 0)");
                     ctx.fillStyle = grad;
@@ -327,7 +340,7 @@
                     requestAnimationFrame(update);
                 }
             },
-            { passive: true }
+            { passive: true },
         );
 
         update();
@@ -339,7 +352,6 @@
             initCounters();
             initSpotlightAndTilt();
             initMagnetic();
-            initCursorLens();
             initBokehCanvas();
             initScrollChrome();
         },

@@ -64,15 +64,15 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap"
+            href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
             rel="stylesheet"
         />
 
-        <link rel="stylesheet" href="assets/css/tokens.css" />
-        <link rel="stylesheet" href="assets/css/base.css" />
-        <link rel="stylesheet" href="assets/css/shell.css" />
-        <link rel="stylesheet" href="assets/css/components.css" />
-        <link rel="stylesheet" href="assets/css/pages.css" />
+        <link rel="stylesheet" href="assets/css/tokens.css?v=3" />
+        <link rel="stylesheet" href="assets/css/base.css?v=3" />
+        <link rel="stylesheet" href="assets/css/shell.css?v=3" />
+        <link rel="stylesheet" href="assets/css/components.css?v=3" />
+        <link rel="stylesheet" href="assets/css/pages.css?v=3" />
     </head>
     <body data-page="reservas">
         <header id="appHeader"></header>
@@ -86,15 +86,12 @@
                 ></canvas>
                 <div class="container page-hero__inner">
                     <div class="page-hero__copy" data-reveal="blur">
-                        <span class="kicker">
-                            <span class="kicker__dot"></span>
-                            Pestaña 04 · Agenda en línea
-                        </span>
-                        <h1 class="heading-xl">Reserva tu fecha</h1>
+                        <h1 class="heading-xl">
+                            Reserva <span class="text-gradient">tu fecha</span>
+                        </h1>
                         <p class="lead">
-                            Selecciona el día de tu celebración, completa unos
-                            datos breves y envía tu solicitud directa por
-                            WhatsApp para confirmar disponibilidad al instante.
+                            Marca el día en el calendario y te confirmamos
+                            disponibilidad por WhatsApp.
                         </p>
                     </div>
                     <a class="btn btn--ghost-dark" href="cotizador.html">
@@ -106,7 +103,6 @@
             <section class="section">
                 <div class="container">
                     <div class="booking-studio">
-
                         <div class="card cal-box" data-reveal="up">
                             <div class="cal-head">
                                 <button
@@ -125,7 +121,10 @@
                                         <path d="M15 18 9 12l6-6" />
                                     </svg>
                                 </button>
-                                <strong class="cal-month" id="calMonth"></strong>
+                                <strong
+                                    class="cal-month"
+                                    id="calMonth"
+                                ></strong>
                                 <button
                                     type="button"
                                     class="icon-circle"
@@ -158,37 +157,6 @@
                         </div>
 
                         <div class="booking-right">
-                            <div class="pass-ticket" data-reveal="scale">
-                                <div class="pass-ticket__thumb">
-                                    <img
-                                        id="passImg"
-                                        src="assets/IMG/6.jpeg"
-                                        alt="Vista previa de tu evento"
-                                    />
-                                </div>
-                                <div class="pass-ticket__body">
-                                    <span class="pass-ticket__code"
-                                        >Pase de Pre-Reserva · Eventos Ruiz</span
-                                    >
-                                    <strong
-                                        class="pass-ticket__title"
-                                        id="passTitle"
-                                        >Bodas</strong
-                                    >
-                                    <span
-                                        class="pass-ticket__meta"
-                                        id="passDate"
-                                        >Elige una fecha en el calendario</span
-                                    >
-                                    <span
-                                        class="pass-ticket__meta"
-                                        id="passClient"
-                                        >Eventos Ruiz · Zona 23 de Marzo, La
-                                        Paz</span
-                                    >
-                                </div>
-                            </div>
-
                             <div
                                 class="imported-quote"
                                 id="importedQuoteBox"
@@ -208,7 +176,9 @@
 
                                 <div class="form-row-2">
                                     <label class="field">
-                                        <span class="field__label">Tu nombre</span>
+                                        <span class="field__label"
+                                            >Tu nombre</span
+                                        >
                                         <input
                                             class="input"
                                             id="bookName"

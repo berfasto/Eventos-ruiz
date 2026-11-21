@@ -3,6 +3,17 @@
 
     var ER = (root.ER = root.ER || {});
 
+    function brandHTML(logo) {
+        return (
+            '<a class="nav-brand" href="index.html">' +
+            '<span class="nav-brand__badge"><img src="' +
+            logo +
+            '" alt="Eventos Ruiz" width="44" height="44" /></span>' +
+            '<span class="nav-brand__title">Eventos <b>Ruiz</b></span>' +
+            "</a>"
+        );
+    }
+
     function renderShell() {
         var pageId = document.body.dataset.page || "inicio";
         var brand = ER.DATA.brand;
@@ -11,13 +22,7 @@
 
         document.body.insertAdjacentHTML(
             "afterbegin",
-            '<div class="scroll-bar" id="scrollBar" aria-hidden="true"></div>' +
-                '<div class="page-curtain" id="pageCurtain" aria-hidden="true">' +
-                '<div class="page-curtain__badge"><img src="' +
-                brand.logo +
-                '" alt="" /></div>' +
-                "</div>" +
-                '<div class="cursor-lens" id="cursorLens" aria-hidden="true"><span id="cursorLabel"></span></div>'
+            '<div class="scroll-bar" id="scrollBar" aria-hidden="true"></div>',
         );
 
         var headerMount = ER.utils.qs("#appHeader");
@@ -25,16 +30,7 @@
             headerMount.className = "site-nav";
             headerMount.innerHTML =
                 '<div class="container nav__inner">' +
-                '<a class="nav-brand" href="index.html">' +
-                '<span class="nav-brand__badge"><img src="' +
-                brand.logo +
-                '" alt="Eventos Ruiz" width="44" height="44" /></span>' +
-                '<span><span class="nav-brand__title">' +
-                brand.name +
-                '</span><span class="nav-brand__sub">' +
-                loc.zone +
-                " · La Paz</span></span>" +
-                "</a>" +
+                brandHTML(brand.logo) +
                 '<nav class="nav-tabs" aria-label="Navegación principal">' +
                 navItems
                     .map(function (item) {
@@ -64,16 +60,7 @@
             "beforeend",
             '<aside class="mobile-menu" id="mobileMenu" hidden aria-label="Menú móvil">' +
                 '<div class="mobile-menu__head">' +
-                '<a class="nav-brand" href="index.html">' +
-                '<span class="nav-brand__badge"><img src="' +
-                brand.logo +
-                '" alt="Eventos Ruiz" width="44" height="44" /></span>' +
-                '<span><span class="nav-brand__title">' +
-                brand.name +
-                '</span><span class="nav-brand__sub">' +
-                brand.city +
-                "</span></span>" +
-                "</a>" +
+                brandHTML(brand.logo) +
                 '<button type="button" class="icon-circle" id="navClose" aria-label="Cerrar menú">' +
                 '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>' +
                 "</button>" +
@@ -97,14 +84,14 @@
                     .join("") +
                 "</nav>" +
                 '<div class="mobile-menu__foot">' +
-                '<a class="btn btn--gold btn--full" href="reservas.html">Reservar mi fecha</a>' +
+                '<a class="btn btn--gold btn--full" href="reservas.html">Reservar fecha</a>' +
                 '<a class="btn btn--ghost-dark btn--full" href="tel:' +
                 brand.phoneHref +
                 '">Llamar · ' +
                 brand.phone +
                 "</a>" +
                 "</div>" +
-                "</aside>"
+                "</aside>",
         );
 
         var footerMount = ER.utils.qs("#appFooter");
@@ -112,58 +99,30 @@
             footerMount.className = "site-footer";
             footerMount.innerHTML =
                 '<div class="container">' +
-                '<div class="footer__top">' +
-                "<div>" +
-                '<a class="nav-brand" href="index.html">' +
-                '<span class="nav-brand__badge"><img src="' +
-                brand.logo +
-                '" alt="Eventos Ruiz" width="44" height="44" /></span>' +
-                '<span><span class="nav-brand__title">' +
-                brand.name +
-                '</span><span class="nav-brand__sub">' +
-                brand.slogan +
-                "</span></span>" +
+                '<div class="footer__main">' +
+                '<div class="footer__brand-block">' +
+                brandHTML(brand.logo) +
+                '<p class="footer__tagline">Decoración de bodas, 15 años, bautizos, licenciamientos, baby showers y cumpleaños en La Paz.</p>' +
+                '<div class="footer__contact-row">' +
+                '<a class="footer__phone" href="tel:' +
+                brand.phoneHref +
+                '">' +
+                brand.phone +
                 "</a>" +
-                '<p class="footer__bio">Decoración integral para bodas, 15 años, bautizos, licenciamientos, baby showers y galas. Encuéntranos en <strong>' +
+                '<span style="color:var(--ink-on-dark-muted)">' +
                 loc.address +
-                "</strong>.</p>" +
+                "</span>" +
                 "</div>" +
-                "<div>" +
-                '<h3 class="footer__col-title">Pestañas</h3>' +
-                '<ul class="footer__list">' +
+                "</div>" +
+                '<nav class="footer__nav" aria-label="Enlaces del pie">' +
                 navItems
                     .map(function (item) {
                         return (
-                            '<li><a href="' +
-                            item.href +
-                            '">' +
-                            item.label +
-                            "</a></li>"
+                            '<a href="' + item.href + '">' + item.label + "</a>"
                         );
                     })
                     .join("") +
-                "</ul>" +
-                "</div>" +
-                "<div>" +
-                '<h3 class="footer__col-title">Especialidades</h3>' +
-                '<ul class="footer__list">' +
-                '<li><a href="eventos.html?cat=bodas">Bodas</a></li>' +
-                '<li><a href="eventos.html?cat=xv">15 Años</a></li>' +
-                '<li><a href="eventos.html?cat=licenciamientos">Licenciamientos</a></li>' +
-                '<li><a href="eventos.html?cat=bautizos">Bautizos y Baby Shower</a></li>' +
-                '<li><a href="eventos.html?cat=celebraciones">Cumpleaños y Galas</a></li>' +
-                "</ul>" +
-                "</div>" +
-                '<div class="footer__cta-box">' +
-                "<strong>¿Tienes fecha para tu celebración?</strong>" +
-                "<p>Consulta disponibilidad o calcula tu presupuesto estimado ahora mismo.</p>" +
-                '<a class="btn btn--gold btn--sm btn--full" href="reservas.html">Apartar fecha</a>' +
-                '<a class="btn btn--ghost-dark btn--sm btn--full" href="tel:' +
-                brand.phoneHref +
-                '">Tel. ' +
-                brand.phone +
-                "</a>" +
-                "</div>" +
+                "</nav>" +
                 "</div>" +
                 '<div class="footer__bottom">' +
                 "<span>© " +
@@ -173,11 +132,11 @@
                 " · " +
                 brand.slogan +
                 "</span>" +
-                "<span>" +
-                loc.address +
-                " · WhatsApp " +
-                brand.phone +
-                "</span>" +
+                '<div class="footer__bottom-links">' +
+                '<a href="#" data-wa-general>WhatsApp</a>' +
+                '<a href="contacto.html">Mapa</a>' +
+                '<a href="reservas.html">Agenda</a>' +
+                "</div>" +
                 "</div>" +
                 "</div>";
         }
@@ -185,14 +144,14 @@
         document.body.insertAdjacentHTML(
             "beforeend",
             '<div class="fab-dock">' +
-                '<button type="button" class="fab-top" id="fabTop" aria-label="Subir al inicio">' +
+                '<button type="button" class="fab-top" id="fabTop" aria-label="Subir">' +
                 ER.utils.ICONS.up +
                 "</button>" +
                 '<a class="fab-wa" href="#" data-wa-general aria-label="Escribir por WhatsApp">' +
                 ER.utils.ICONS.wa +
                 "<span>WhatsApp</span></a>" +
                 "</div>" +
-                '<div class="toast" id="erToast" role="status" aria-live="polite"></div>'
+                '<div class="toast" id="erToast" role="status" aria-live="polite"></div>',
         );
 
         bindShellEvents();
@@ -241,46 +200,9 @@
             if (waTrigger) {
                 e.preventDefault();
                 ER.utils.openWhatsApp(
-                    "Hola Eventos Ruiz (Zona 23 de Marzo), quisiera consultar disponibilidad y recibir información sobre decoración de eventos."
+                    "Hola Eventos Ruiz, quisiera consultar disponibilidad y precios para decorar un evento.",
                 );
-                return;
             }
-
-            var link = e.target.closest("a[href]");
-            if (
-                !link ||
-                link.target === "_blank" ||
-                e.metaKey ||
-                e.ctrlKey ||
-                e.shiftKey ||
-                e.altKey
-            ) {
-                return;
-            }
-            var href = link.getAttribute("href");
-            if (
-                href &&
-                /^(Index|eventos|cotizador|reservas|contacto)\.html(\?.*)?(#.*)?$/i.test(
-                    href
-                )
-            ) {
-                var currentFile = (
-                    window.location.pathname.split("/").pop() || "index.html"
-                ).toLowerCase();
-                if (href.toLowerCase() === currentFile) {
-                    e.preventDefault();
-                    window.scrollTo({ top: 0, behavior: "smooth" });
-                    closeMenu();
-                    return;
-                }
-                e.preventDefault();
-                ER.utils.goPage(href);
-            }
-        });
-
-        window.addEventListener("pageshow", function () {
-            var curtain = ER.utils.qs("#pageCurtain");
-            if (curtain) curtain.classList.remove("is-active");
         });
     }
 

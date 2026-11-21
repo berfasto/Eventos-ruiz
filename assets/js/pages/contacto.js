@@ -48,7 +48,7 @@
         if (waLoc) {
             waLoc.addEventListener("click", function () {
                 ER.utils.openWhatsApp(
-                    "Hola Eventos Ruiz, ¿me pueden enviar la ubicación exacta para coordinar una visita?"
+                    "Hola Eventos Ruiz, ¿me pueden enviar la ubicación exacta para coordinar una visita?",
                 );
             });
         }

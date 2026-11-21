@@ -8,7 +8,7 @@ $ErrorActionPreference = "Stop"
 $root = Split-Path -Parent $PSScriptRoot
 $imgDir = Join-Path $root "assets\IMG"
 
-Write-Host "`n=== AUDITORIA SEO & PAGESPEED — EVENTOS RUIZ ===" -ForegroundColor Yellow
+Write-Host "`n=== AUDITORIA SEO & PAGESPEED - EVENTOS RUIZ ===" -ForegroundColor Yellow
 
 Write-Host "`n[1/3] Peso de imágenes en assets/IMG/ (límite recomendado móvil: $MaxKB KB)" -ForegroundColor Cyan
 $heavy = @()

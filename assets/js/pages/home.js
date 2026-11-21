@@ -86,7 +86,9 @@
 
         select.innerHTML = ER.DATA.eventTypes
             .map(function (ev) {
-                return '<option value="' + ev.id + '">' + ev.label + "</option>";
+                return (
+                    '<option value="' + ev.id + '">' + ev.label + "</option>"
+                );
             })
             .join("");
 
@@ -103,7 +105,8 @@
             e.preventDefault();
             var params = new URLSearchParams();
             params.set("evento", select.value);
-            if (dateInput && dateInput.value) params.set("fecha", dateInput.value);
+            if (dateInput && dateInput.value)
+                params.set("fecha", dateInput.value);
             if (guestsInput && guestsInput.value) {
                 params.set("invitados", guestsInput.value);
             }
@@ -233,7 +236,8 @@
             }
             if (bookLink) {
                 bookLink.href =
-                    "reservas.html?evento=" + encodeURIComponent(active.eventType);
+                    "reservas.html?evento=" +
+                    encodeURIComponent(active.eventType);
             }
         }
 
@@ -288,29 +292,21 @@
                     (item.wide ? " bento-tile--wide" : "") +
                     '" href="eventos.html?cat=' +
                     ev.category +
-                    '" style="--tile-color:' +
-                    ev.color +
-                    "; --delay:" +
-                    i * 75 +
-                    'ms" data-reveal="up" data-tilt="6" data-cursor="VER">' +
+                    '" style="--delay:' +
+                    i * 70 +
+                    'ms" data-reveal="up" data-tilt="5">' +
                     '<img src="' +
                     ev.heroImage +
                     '" alt="' +
                     ev.label +
                     '" loading="lazy" />' +
-                    '<span class="bento-tile__badge">' +
-                    ev.label +
-                    "</span>" +
-                    "<div>" +
+                    '<div class="bento-tile__bar">' +
                     '<h3 class="bento-tile__title">' +
                     ev.label +
                     "</h3>" +
-                    '<p class="bento-tile__desc">' +
-                    ev.description +
-                    "</p>" +
-                    '<div class="bento-tile__foot"><span>Ver montajes y detalles</span>' +
+                    '<span class="bento-tile__arrow" aria-hidden="true">' +
                     ER.utils.ICONS.arrow +
-                    "</div>" +
+                    "</span>" +
                     "</div>" +
                     "</a>"
                 );
@@ -376,13 +372,9 @@
                 img.style.opacity = "1";
                 img.style.transform = "scale(1)";
             }, 130);
-            title.textContent = m.title;
-            desc.textContent = m.desc;
-            tags.innerHTML = m.tags
-                .map(function (t) {
-                    return '<span class="mood-tag">' + t + "</span>";
-                })
-                .join("");
+            if (title) title.textContent = m.title;
+            if (desc) desc.textContent = "";
+            if (tags) tags.innerHTML = "";
             quoteLink.href =
                 "cotizador.html?evento=" + encodeURIComponent(m.eventType);
             bookLink.href =

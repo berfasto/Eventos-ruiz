@@ -96,7 +96,10 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    transition: transform var(--t-base) var(--ease-spring), background-color var(--t-fast), border-color var(--t-fast);
+    transition:
+        transform var(--t-base) var(--ease-spring),
+        background-color var(--t-fast),
+        border-color var(--t-fast);
 }
 
 .icon-circle:hover {
@@ -131,9 +134,10 @@
     pointer-events: none;
     opacity: 0;
     background: radial-gradient(
-        340px circle at var(--sx, 50%) var(--sy, 50%),
-        rgba(217, 155, 38, 0.12),
-        transparent 65%
+        320px circle at var(--sx, 50%) var(--sy, 50%),
+        rgba(217, 155, 38, 0.14),
+        rgba(124, 58, 237, 0.07) 42%,
+        transparent 68%
     );
     transition: opacity var(--t-base);
 }
@@ -195,15 +199,15 @@
 }
 
 .pill.is-active {
-    background: var(--pill-color, var(--bg-dark));
-    border-color: var(--pill-color, var(--bg-dark));
+    background: var(--bg-dark);
+    border-color: var(--bg-dark);
     color: #ffffff;
     font-weight: 600;
-    box-shadow: 0 8px 20px rgba(15, 18, 26, 0.15);
+    box-shadow: 0 8px 20px rgba(15, 18, 26, 0.16);
 }
 
 .pill.is-active .pill__dot {
-    background: #ffffff;
+    background: var(--gold-bright);
 }
 
 .field {
@@ -232,7 +236,10 @@
     background: var(--bg);
     color: var(--ink);
     font-size: var(--text-base);
-    transition: border-color var(--t-fast), background-color var(--t-fast), box-shadow var(--t-fast);
+    transition:
+        border-color var(--t-fast),
+        background-color var(--t-fast),
+        box-shadow var(--t-fast);
 }
 
 .input:hover,
