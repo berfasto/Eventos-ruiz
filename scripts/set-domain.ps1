@@ -1,10 +1,3 @@
-﻿<#
-.SYNOPSIS
-    Configura en un paso tu URL real de GitHub Pages, código de Google Search Console
-    y enlace de Google Business Profile en todo el proyecto.
-.EXAMPLE
-    .\scripts\set-domain.ps1 -Url "https://miusuario.github.io/eventos-ruiz" -SearchConsoleCode "abc123xyz" -GoogleBusinessUrl "https://maps.app.goo.gl/xxxxx"
-#>
 param(
     [Parameter(Mandatory = $true)]
     [string]$Url,

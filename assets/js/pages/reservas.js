@@ -1,7 +1,3 @@
-/**
- * Eventos Ruiz — Página: Reservas (reservas.html)
- * Calendario interactivo + Pase Visual de Pre-Reserva en Tiempo Real + Favoritos + WhatsApp
- */
 (function (root) {
     "use strict";
 
@@ -55,7 +51,6 @@
         var submitBtn = ER.utils.qs("#bookSubmit");
         var draftBanner = ER.utils.qs("#importedQuoteBox");
 
-        /* Pase visual en vivo */
         var passImg = ER.utils.qs("#passImg");
         var passTitle = ER.utils.qs("#passTitle");
         var passDate = ER.utils.qs("#passDate");

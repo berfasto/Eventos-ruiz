@@ -1,7 +1,3 @@
-/* ==========================================================================
-   Shell Unificado: Navbar Flotante, Pestañas, Drawer Móvil, Footer, FAB
-   ========================================================================== */
-
 .site-nav {
     position: sticky;
     top: 0;
@@ -28,7 +24,6 @@
     gap: 1rem;
 }
 
-/* Marca en navbar */
 .nav-brand {
     display: inline-flex;
     align-items: center;
@@ -73,7 +68,6 @@
     font-weight: 500;
 }
 
-/* Pestañas en cápsula moderna */
 .nav-tabs {
     display: flex;
     align-items: center;
@@ -126,7 +120,6 @@
     justify-content: center;
 }
 
-/* Drawer Móvil */
 .mobile-menu {
     position: fixed;
     inset: 0;
@@ -195,7 +188,6 @@
     border-top: 1px solid var(--border-dark);
 }
 
-/* Footer moderno de alto contraste */
 .site-footer {
     background: var(--bg-dark);
     color: var(--ink-on-dark);
@@ -269,7 +261,6 @@
     color: var(--ink-on-dark-muted);
 }
 
-/* Floating Quick Dock */
 .fab-dock {
     position: fixed;
     right: 1.2rem;
@@ -331,7 +322,6 @@
     height: 18px;
 }
 
-/* Toast accesible */
 .toast {
     position: fixed;
     left: 50%;

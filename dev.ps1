@@ -1,4 +1,3 @@
-# Eventos Ruiz — Servidor Local de Desarrollo (sin dependencias externas)
 param(
     [int]$Port = 8080
 )

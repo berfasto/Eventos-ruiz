@@ -1,7 +1,3 @@
-/* ==========================================================================
-   Base, Tipografía, Animaciones de Scroll y Transiciones de Página
-   ========================================================================== */
-
 *,
 *::before,
 *::after {
@@ -104,7 +100,6 @@ figure {
     color: var(--ink-on-dark);
 }
 
-/* Tipografía de impacto limpio */
 .kicker {
     display: inline-flex;
     align-items: center;
@@ -202,7 +197,6 @@ figure {
     justify-items: start;
 }
 
-/* Barra superior de progreso */
 .scroll-bar {
     position: fixed;
     top: 0;
@@ -216,7 +210,6 @@ figure {
     pointer-events: none;
 }
 
-/* Cortina suave de transición entre páginas */
 .page-curtain {
     position: fixed;
     inset: 0;
@@ -232,7 +225,6 @@ figure {
     pointer-events: auto;
 }
 
-/* Animaciones suaves de aparición al bajar (Scroll Reveal) */
 [data-reveal] {
     opacity: 0;
     will-change: transform, opacity, clip-path;
@@ -274,7 +266,6 @@ figure {
     clip-path: inset(0 0 0 0 round var(--r-lg));
 }
 
-/* Cinta cinética infinita (Marquee) */
 .marquee {
     position: relative;
     overflow: hidden;

@@ -1,14 +1,3 @@
-<#
-.SYNOPSIS
-    Auditoría SEO y PageSpeed para Eventos Ruiz (antes de publicar en GitHub Pages).
-.DESCRIPTION
-    1. Revisa el peso de todas las imágenes en assets/IMG/ para Google PageSpeed móvil.
-    2. Opcionalmente comprime imágenes pesadas (> MaxKB) manteniendo respaldo automático.
-    3. Audita títulos, meta descriptions, canonicals, JSON-LD, etiqueta de Search Console y enlaces.
-.EXAMPLE
-    .\scripts\seo-audit.ps1
-    .\scripts\seo-audit.ps1 -Compress -MaxKB 140
-#>
 param(
     [switch]$Compress,
     [int]$MaxKB = 150,
@@ -21,7 +10,6 @@ $imgDir = Join-Path $root "assets\IMG"
 
 Write-Host "`n=== AUDITORIA SEO & PAGESPEED — EVENTOS RUIZ ===" -ForegroundColor Yellow
 
-# 1. Revisión de peso de imágenes (Google PageSpeed Insights)
 Write-Host "`n[1/3] Peso de imágenes en assets/IMG/ (límite recomendado móvil: $MaxKB KB)" -ForegroundColor Cyan
 $heavy = @()
 Get-ChildItem -Path $imgDir -File | Sort-Object Length -Descending | ForEach-Object {
@@ -77,7 +65,6 @@ if ($Compress -and $heavy.Count -gt 0) {
     }
 }
 
-# 2. Auditoría de archivos SEO (Search Console & GitHub Pages)
 Write-Host "`n[2/3] Archivos clave para GitHub Pages y Google Search Console" -ForegroundColor Cyan
 $requiredFiles = @("index.html", "eventos.html", "cotizador.html", "reservas.html", "contacto.html", "robots.txt", "sitemap.xml", "site.webmanifest")
 foreach ($rf in $requiredFiles) {
@@ -87,7 +74,6 @@ foreach ($rf in $requiredFiles) {
     Write-Host ("  {0,-8} {1}" -f $status, $rf) -ForegroundColor $color
 }
 
-# Verificar minúscula exacta de index.html para GitHub Pages (Linux es sensible a mayúsculas)
 $indexActual = (Get-ChildItem -Path $root -Filter "index.html").Name
 if ($indexActual -cne "index.html") {
     Write-Host "  [ALERTA] Archivo raíz está como '$indexActual'. GitHub Pages exige 'index.html' en minúsculas." -ForegroundColor Red
@@ -95,7 +81,6 @@ if ($indexActual -cne "index.html") {
     Write-Host "  [OK]     index.html en minúsculas listo para GitHub Pages" -ForegroundColor Green
 }
 
-# 3. Auditoría de metaetiquetas SEO en cada página HTML
 Write-Host "`n[3/3] Títulos, Meta Descriptions, Open Graph y JSON-LD (Bolivia)" -ForegroundColor Cyan
 $pages = @("index.html", "eventos.html", "cotizador.html", "reservas.html", "contacto.html")
 foreach ($p in $pages) {

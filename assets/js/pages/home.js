@@ -1,7 +1,3 @@
-/**
- * Eventos Ruiz — Página: Inicio (Index.html)
- * Hero interactivo, Quick-Book, Comparador Deslizante, Baraja 3D, Bento y Atmósferas
- */
 (function (root) {
     "use strict";
 
@@ -115,7 +111,6 @@
         });
     }
 
-    /* Comparador interactivo deslizante de atmósferas reales */
     function initComparator() {
         var stage = ER.utils.qs("#compareStage");
         var range = ER.utils.qs("#compareRange");
@@ -176,7 +171,6 @@
         selectPair(0);
     }
 
-    /* Baraja 3D interactiva de montajes reales */
     function initPhotoDeck() {
         var deck = ER.utils.qs("#photoDeck");
         var titleEl = ER.utils.qs("#deckTitle");

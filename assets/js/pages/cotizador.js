@@ -1,7 +1,3 @@
-/**
- * Eventos Ruiz — Página: Paquetes y Cotizador (cotizador.html)
- * Incluye vista previa fotográfica en vivo del evento seleccionado + efectos destello
- */
 (function (root) {
     "use strict";
 

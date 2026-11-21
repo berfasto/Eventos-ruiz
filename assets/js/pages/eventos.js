@@ -1,7 +1,3 @@
-/**
- * Eventos Ruiz — Página: Eventos y Galería (eventos.html)
- * Especialidades, Galería con cambio de vista, Tablero de Favoritos y Lightbox
- */
 (function (root) {
     "use strict";
 
@@ -62,7 +58,6 @@
         function renderAll(cat) {
             var favs = ER.utils.getFavorites();
 
-            /* 1. Especialidades */
             var specs = ER.DATA.eventTypes.filter(function (ev) {
                 return cat === "todo" || ev.category === cat;
             });
@@ -114,7 +109,6 @@
                 })
                 .join("");
 
-            /* 2. Galería */
             visiblePhotos = ER.DATA.gallery.filter(function (g) {
                 return cat === "todo" || g.category === cat;
             });
@@ -215,7 +209,6 @@
             }
         });
 
-        /* Favoritos y Lightbox */
         var lbImg = ER.utils.qs("#lbImg", lb);
         var lbTitle = ER.utils.qs("#lbTitle", lb);
         var lbDesc = ER.utils.qs("#lbDesc", lb);

@@ -1,8 +1,3 @@
-/**
- * Eventos Ruiz — Fuente Única de Datos y Configuración
- * ----------------------------------------------------
- * Imágenes ubicadas en assets/IMG/ y ubicación en Zona 23 de Marzo, La Paz.
- */
 (function (root) {
     "use strict";
 
@@ -37,7 +32,6 @@
             coverage: "Zona 23 de Marzo, La Paz, Zona Sur, Sopocachi, Miraflores y El Alto",
         },
 
-        /* Categorías con color dinámico propio */
         categories: [
             { id: "todo", label: "Todos los eventos", color: "#0f121a" },
             { id: "bodas", label: "Bodas", color: "#d99b26" },
@@ -47,7 +41,6 @@
             { id: "celebraciones", label: "Cumpleaños y Galas", color: "#3b5bdb" },
         ],
 
-        /* 7 Especialidades reales del negocio */
         eventTypes: [
             {
                 id: "Boda",
@@ -191,7 +184,6 @@
             },
         ],
 
-        /* Catálogo completo de las 10 fotografías reales en assets/IMG/ */
         gallery: [
             {
                 id: "boda-botanica",
@@ -285,7 +277,6 @@
             },
         ],
 
-        /* Comparador interactivo deslizante de atmósferas (Inicio) */
         comparisons: [
             {
                 id: "dia-noche",
@@ -316,7 +307,6 @@
             },
         ],
 
-        /* Explorador interactivo de atmósferas */
         moods: [
             {
                 id: "botanico",
@@ -364,7 +354,6 @@
             },
         ],
 
-        /* Paquetes de servicio */
         packages: [
             {
                 name: "Esencial",
@@ -412,7 +401,6 @@
             },
         ],
 
-        /* Extras seleccionables */
         extras: [
             { name: "Arco orgánico de globos", price: 350 },
             { name: "Mesa de dulces", price: 450 },
@@ -422,7 +410,6 @@
             { name: "Letras o letrero luminoso", price: 400 },
         ],
 
-        /* Preguntas frecuentes */
         faqs: [
             {
                 q: "¿Dónde están ubicados y qué zonas cubren?",

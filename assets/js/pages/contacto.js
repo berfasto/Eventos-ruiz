@@ -1,7 +1,3 @@
-/**
- * Eventos Ruiz — Página: Ubicación y Contacto (contacto.html)
- * Mapa interactivo, accesos rápidos, copia de datos y acordeón FAQ
- */
 (function (root) {
     "use strict";
 

@@ -1,7 +1,5 @@
-# Respaldos locales de compresión de imágenes (seo-audit.ps1 -Compress)
 .img-backup/
 
-# Sistema operativo y editores
 .DS_Store
 Thumbs.db
 desktop.ini

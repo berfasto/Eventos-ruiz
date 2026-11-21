@@ -1,10 +1,3 @@
-/* ==========================================================================
-   Layouts por Página: Inicio, Eventos, Cotizador, Reservas y Contacto
-   ========================================================================== */
-
-/* --------------------------------------------------------------------------
-   PAGE BANNER (para páginas secundarias: eventos, cotizador, reservas, contacto)
-   -------------------------------------------------------------------------- */
 .page-hero {
     position: relative;
     background: var(--bg-dark);
@@ -43,9 +36,6 @@
     color: var(--ink-on-dark-muted);
 }
 
-/* --------------------------------------------------------------------------
-   1. INICIO — Hero Cinematográfico + Logo Orbital + Quick-Book Dock
-   -------------------------------------------------------------------------- */
 .home-hero {
     position: relative;
     background: var(--bg-dark);
@@ -84,7 +74,6 @@
     max-width: 50ch;
 }
 
-/* Selector interactivo de ambiente en el Hero */
 .hero-switcher {
     display: flex;
     flex-wrap: wrap;
@@ -115,7 +104,6 @@
     box-shadow: 0 8px 24px color-mix(in srgb, var(--hero-accent) 42%, transparent);
 }
 
-/* Escenario visual derecho: Fotografía viva + Logo orbital heredado y elevado */
 .hero-stage {
     position: relative;
     display: grid;
@@ -177,7 +165,6 @@
     margin-top: 0.2rem;
 }
 
-/* Medallón del logotipo (mantiene la esencia flotante y el anillo orbital de la versión anterior) */
 .logo-orbit {
     position: absolute;
     top: -1.25rem;
@@ -232,7 +219,6 @@
     }
 }
 
-/* Barra Express de Reserva Rápida en Inicio */
 .quick-book {
     position: relative;
     z-index: 5;
@@ -266,7 +252,6 @@
     border-color: var(--gold-bright);
 }
 
-/* Métricas animadas */
 .stats-strip {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -293,7 +278,6 @@
     color: var(--ink-muted);
 }
 
-/* Bento Grid de Especialidades en Inicio */
 .specialty-bento {
     display: grid;
     grid-template-columns: repeat(12, minmax(0, 1fr));
@@ -385,7 +369,6 @@
     font-weight: 600;
 }
 
-/* Explorador interactivo de Atmósferas en Inicio */
 .mood-studio {
     display: grid;
     grid-template-columns: 0.95fr 1.05fr;
@@ -502,7 +485,6 @@
     font-weight: 500;
 }
 
-/* Banda CTA final */
 .cta-banner {
     padding: clamp(2.25rem, 5vw, 3.75rem);
     border-radius: var(--r-xl);
@@ -517,9 +499,6 @@
     flex-wrap: wrap;
 }
 
-/* --------------------------------------------------------------------------
-   2. EVENTOS Y GALERÍA (eventos.html)
-   -------------------------------------------------------------------------- */
 .services-deck {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
@@ -627,7 +606,6 @@
     color: var(--ink-soft);
 }
 
-/* Galería Masonry / Editorial 10 fotos */
 .gallery-toolbar {
     display: flex;
     align-items: center;
@@ -727,9 +705,6 @@
     line-height: 1.1;
 }
 
-/* --------------------------------------------------------------------------
-   3. PAQUETES Y COTIZADOR (cotizador.html)
-   -------------------------------------------------------------------------- */
 .packages-row {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -829,7 +804,6 @@
     margin-top: 2px;
 }
 
-/* Constructor interactivo */
 .builder-grid {
     display: grid;
     grid-template-columns: 1.25fr 0.9fr;
@@ -995,7 +969,6 @@
     font-weight: 700;
 }
 
-/* Recibo Sticky */
 .receipt-card {
     position: sticky;
     top: calc(var(--nav-h) + 1.5rem);
@@ -1040,9 +1013,6 @@
     font-weight: 500;
 }
 
-/* --------------------------------------------------------------------------
-   4. RESERVAS (reservas.html)
-   -------------------------------------------------------------------------- */
 .booking-studio {
     display: grid;
     grid-template-columns: minmax(320px, 430px) 1fr;
@@ -1191,9 +1161,6 @@
     gap: 1rem;
 }
 
-/* --------------------------------------------------------------------------
-   5. CONTACTO Y UBICACIÓN (contacto.html)
-   -------------------------------------------------------------------------- */
 .contact-grid {
     display: grid;
     grid-template-columns: 1.35fr 0.95fr;
@@ -1300,9 +1267,6 @@
     font-size: var(--text-sm);
 }
 
-/* --------------------------------------------------------------------------
-   Responsive Global
-   -------------------------------------------------------------------------- */
 @media (max-width: 1024px) {
     .home-hero__grid,
     .mood-studio,
@@ -1374,12 +1338,6 @@
     }
 }
 
-/* ==========================================================================
-   Efectos Creativos Avanzados: Cursor Lente, Bokeh Canvas, Sparkles,
-   Comparador Deslizante, Baraja 3D, Favoritos y Pase de Pre-Reserva
-   ========================================================================== */
-
-/* Cortina con emblema de marca */
 .page-curtain {
     display: grid;
     place-items: center;
@@ -1406,7 +1364,6 @@
     object-fit: cover;
 }
 
-/* Cursor Lente Interactivo (solo escritorio) */
 .cursor-lens {
     position: fixed;
     top: 0;
@@ -1465,7 +1422,6 @@
     }
 }
 
-/* Partículas destello en celebraciones */
 .spark-particle {
     position: fixed;
     z-index: 140;
@@ -1487,7 +1443,6 @@
     }
 }
 
-/* Revelado blur-up */
 [data-reveal="blur"] {
     filter: blur(10px);
     transform: translateY(22px);
@@ -1503,7 +1458,6 @@
     transform: none;
 }
 
-/* Canvas de luces Bokeh en Hero */
 .hero-bokeh {
     position: absolute;
     inset: 0;
@@ -1513,15 +1467,11 @@
     z-index: 0;
 }
 
-/* Parallax sutil */
 [data-parallax] {
     transform: translateY(var(--py, 0px));
     will-change: transform;
 }
 
-/* --------------------------------------------------------------------------
-   Comparador Deslizante Interactivo (Antes / Después de Atmósferas)
-   -------------------------------------------------------------------------- */
 .compare-shell {
     display: grid;
     gap: 1.35rem;
@@ -1622,9 +1572,6 @@
     margin: 0;
 }
 
-/* --------------------------------------------------------------------------
-   Baraja 3D Interactiva de Montajes Reales (Inicio)
-   -------------------------------------------------------------------------- */
 .deck-layout {
     display: grid;
     grid-template-columns: 0.95fr 1.05fr;
@@ -1723,9 +1670,6 @@
     opacity: 0 !important;
 }
 
-/* --------------------------------------------------------------------------
-   Favoritos & Cambio de Vista en Galería (eventos.html)
-   -------------------------------------------------------------------------- */
 .gal-card-wrap {
     position: relative;
     grid-column: span 4;
@@ -1810,7 +1754,6 @@
     transform: translate(-50%, 0);
 }
 
-/* Vista previa visual dentro del Cotizador (cotizador.html) */
 .receipt-preview {
     position: relative;
     height: 155px;
@@ -1844,7 +1787,6 @@
     color: #ffffff;
 }
 
-/* Pase en vivo de Pre-Reserva (reservas.html) */
 .pass-ticket {
     position: relative;
     border-radius: var(--r-lg);

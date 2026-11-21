@@ -1,7 +1,5 @@
-# Eventos Ruiz — Control de rastreo para Google Search Console
 User-agent: *
 Allow: /
 Disallow: /scripts/
 
-# Sitemap oficial para Google Search Console
 Sitemap: https://berfasto.github.io/Eventos-ruiz/sitemap.xml

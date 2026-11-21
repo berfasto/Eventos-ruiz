@@ -1,6 +1,3 @@
-/**
- * Eventos Ruiz — Utilidades, Favoritos, Estado entre Pestañas y Efecto Destello
- */
 (function (root) {
     "use strict";
 
@@ -92,7 +89,6 @@
         el._raf = requestAnimationFrame(step);
     }
 
-    /* Micro-celebración de partículas doradas en acciones clave */
     function burstSparkles(x, y) {
         if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
             return;
@@ -120,7 +116,6 @@
         }
     }
 
-    /* Parámetros URL */
     function getParam(key) {
         try {
             return new URLSearchParams(window.location.search).get(key);
@@ -129,12 +124,11 @@
         }
     }
 
-    /* Borradores en sessionStorage */
     function saveDraft(key, data) {
         try {
             sessionStorage.setItem("er_" + key, JSON.stringify(data));
         } catch (err) {
-            /* noop */
+
         }
     }
 
@@ -151,11 +145,10 @@
         try {
             sessionStorage.removeItem("er_" + key);
         } catch (err) {
-            /* noop */
+
         }
     }
 
-    /* Tablero de favoritos (inspiraciones guardadas en localStorage) */
     function getFavorites() {
         try {
             var raw = localStorage.getItem("er_favs");
@@ -179,7 +172,7 @@
         try {
             localStorage.setItem("er_favs", JSON.stringify(list));
         } catch (err) {
-            /* noop */
+
         }
         return { added: added, list: list };
     }

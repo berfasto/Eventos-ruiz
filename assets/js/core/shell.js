@@ -1,6 +1,3 @@
-/**
- * Eventos Ruiz — Shell Compartido (Navbar, Menú Móvil, Footer, Cursor y Cortina)
- */
 (function (root) {
     "use strict";
 
@@ -12,7 +9,6 @@
         var loc = ER.DATA.location;
         var navItems = ER.DATA.nav;
 
-        /* 1. Barra de progreso + Cortina de transición + Cursor interactivo */
         document.body.insertAdjacentHTML(
             "afterbegin",
             '<div class="scroll-bar" id="scrollBar" aria-hidden="true"></div>' +
@@ -24,7 +20,6 @@
                 '<div class="cursor-lens" id="cursorLens" aria-hidden="true"><span id="cursorLabel"></span></div>'
         );
 
-        /* 2. Header Unificado */
         var headerMount = ER.utils.qs("#appHeader");
         if (headerMount) {
             headerMount.className = "site-nav";
@@ -65,7 +60,6 @@
                 "</div>";
         }
 
-        /* 3. Drawer Móvil */
         document.body.insertAdjacentHTML(
             "beforeend",
             '<aside class="mobile-menu" id="mobileMenu" hidden aria-label="Menú móvil">' +
@@ -113,7 +107,6 @@
                 "</aside>"
         );
 
-        /* 4. Footer Unificado */
         var footerMount = ER.utils.qs("#appFooter");
         if (footerMount) {
             footerMount.className = "site-footer";
@@ -189,7 +182,6 @@
                 "</div>";
         }
 
-        /* 5. Dock Flotante y Toast */
         document.body.insertAdjacentHTML(
             "beforeend",
             '<div class="fab-dock">' +

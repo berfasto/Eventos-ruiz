@@ -1,8 +1,3 @@
-/**
- * Eventos Ruiz — Motor Creativo de Animaciones e Interacciones
- * Incluye: Scroll-Reveal (blur/clip/slide), Bokeh Lights Canvas, 3D Tilt,
- * Botones Magnéticos, Cursor Interactivo, Parallax de Scroll y Contadores.
- */
 (function (root) {
     "use strict";
 
@@ -13,7 +8,6 @@
         return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     }
 
-    /* 1. Revelado progresivo suave al bajar */
     function initReveals() {
         var nodes = ER.utils.qsa("[data-reveal]");
         if (!nodes.length) return;
@@ -56,7 +50,6 @@
         });
     }
 
-    /* 2. Contadores animados */
     function initCounters() {
         var counters = ER.utils.qsa("[data-counter]");
         if (!counters.length) return;
@@ -92,7 +85,6 @@
         });
     }
 
-    /* 3. Spotlight + 3D Tilt físico en tarjetas y escenarios */
     function initSpotlightAndTilt() {
         if (reducedMotion() || !window.matchMedia("(pointer: fine)").matches) {
             return;
@@ -137,7 +129,6 @@
         );
     }
 
-    /* 4. Botones magnéticos sutiles */
     function initMagnetic() {
         if (reducedMotion() || !window.matchMedia("(pointer: fine)").matches) {
             return;
@@ -156,7 +147,6 @@
         });
     }
 
-    /* 5. Cursor lente interactivo en escritorio */
     function initCursorLens() {
         if (reducedMotion() || !window.matchMedia("(pointer: fine)").matches) {
             return;
@@ -207,7 +197,6 @@
         requestAnimationFrame(loop);
     }
 
-    /* 6. Luces Bokeh flotantes (Canvas ligero para fondos oscuros de Hero) */
     function initBokehCanvas() {
         var canvas = ER.utils.qs("#heroBokeh");
         if (!canvas || reducedMotion()) return;
@@ -302,7 +291,6 @@
         requestAnimationFrame(draw);
     }
 
-    /* 7. Barra de progreso + Parallax sutil de scroll */
     function initScrollChrome() {
         var nav = ER.utils.qs("#appHeader");
         var bar = ER.utils.qs("#scrollBar");
